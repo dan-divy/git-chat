@@ -1,0 +1,63 @@
+{
+  "name": "",
+  "version": "",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "array-tools": "^2.0.9",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "http-errors": "^1.7.2",
+    "morgan": "^1.9.1",
+    "newsapi": "^2.4.0",
+    "path": "^0.12.7",
+    "time-ago": "^0.2.1"
+  },
+  "description": "",
+  "main": "./bin/www",
+  "keywords": [
+    ""
+  ],
+  "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "DanCodes",
+        "repo": ""
+      }
+    ],
+    "appId": "online.dancodes.",
+    "copyright": "DanCodes 2019",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "publish": "github",
+      "category": "public.app-category."
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "publish": "github",
+      "publisherName": "DanCodes"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "zip",
+        "deb"
+      ],
+      "publish": "github",
+      "maintainer": "DanCodes <dan@dancodes.online>"
+    }
+  },
+  "author": "DanCodes <dan@dancodes.online>",
+  "license": "MIT"
+}

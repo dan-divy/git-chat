@@ -1,0 +1,13 @@
+{
+	"name":"",
+	"title":"",
+	"http": {
+		"host":"localhost",
+		"port":80
+	},
+	"author":"DanCodes",
+	"version":"",
+	"db": {
+		"connectionUri":"mongodb://localhost:27017/"
+	}
+}
