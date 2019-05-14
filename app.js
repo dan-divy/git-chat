@@ -5,15 +5,16 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const helmet = require('helmet');
+
 
 const mem = require('./utils/handlers/memwatch');
 
 const indexRouter = require('./routes/index');
-const restApi = require('./routes/api/v1/index')
-
+const restApi = require('./routes/api/v1/index');
 
 const app = express();
-app.conf = require('./config/app')
+app.conf = require('./config/app');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -25,8 +26,9 @@ const cooky = {
   	saveUninitialized: true
 }
 
-app.set('trust proxy', 1) // trust first proxy
-app.use(session(cooky))
+app.set('trust proxy', 1);
+app.use(helmet());
+app.use(session(cooky));
 app.use(logger('tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
