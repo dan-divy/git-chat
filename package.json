@@ -1,6 +1,7 @@
 {
-  "name": "",
-  "version": "",
+  "name": "template",
+  "port": 80,
+  "version": "1.0.1",
   "scripts": {
     "start": "node ./bin/www"
   },

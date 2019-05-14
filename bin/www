@@ -1,17 +1,19 @@
 #!/usr/bin/env node
-
+console.log('\033c')
 /**
  * Module dependencies.
  */
 
 const app = require('../app');
 const http = require('http');
+const config = require('../package.json');
 
+process.stdout.write(config.name + '-v' + config.version + ': Starting...');
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || app.conf.http.port);
+const port = normalizePort(process.env.PORT || config.port);
 app.set('port', port);
 
 /**
@@ -85,5 +87,5 @@ function onListening() {
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  console.log('Listening on ' + bind);
+  process.stdout.clearLine(); process.stdout.cursorTo(0); process.stdout.write(config.name + '-v' + config.version + ': Listening on port ' + addr.port + '\n');
 }
