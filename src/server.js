@@ -13,6 +13,13 @@ const database = require('./utils/handlers/database');
 const indexRouter = require('./routes/index');
 const restApi = require('./routes/api/v1/index');
 
+setInterval(() => {
+const used = process.memoryUsage().heapUsed / 1024 / 1024;
+process.stdout.clearLine();
+process.stdout.cursorTo(0);
+  process.stdout.write(`The script uses approximately ${Math.round(used * 100) / 100} MB`)
+}, 2000)
+
 const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
