@@ -26,7 +26,7 @@ const functions = {
         })
     },
 
-    
+
     set: function(key, value, cb) {
         if(!key) return false;
         if(!value) return false;
@@ -37,7 +37,7 @@ const functions = {
     },
 
 
-    get function(key, cb) {
+    get: function(key, cb) {
         Db.findOne({key}, function(err, res)  {
             if (err) return cb(err, false);
             if(res) {
