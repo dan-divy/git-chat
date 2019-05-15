@@ -64,6 +64,8 @@ typings/
 # next.js build output
 .next
 
-.vscode/sftp.json
 # local uploads
 public/feeds/
+
+# database data
+src/data

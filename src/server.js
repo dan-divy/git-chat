@@ -8,6 +8,7 @@ const logger = require('morgan');
 const helmet = require('helmet');
 
 const mem = require('./utils/handlers/memwatch');
+const database = require('./utils/handlers/database');
 
 const indexRouter = require('./routes/index');
 const restApi = require('./routes/api/v1/index');
