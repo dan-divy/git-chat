@@ -4,6 +4,14 @@ Description
 
 Links
 
+# Setup
+
+```npm run setup```
+
+```npm install```
+
+```npm start```
+
 ## Authors
  - [Dan](https://github.com/MayorChano)
 

@@ -1,12 +1,19 @@
 {
-  "name": "template",
+  "name": "test",
   "port": 80,
-  "version": "1.0.1",
+  "version": "2.0.1",
+  "description": "NodeJS start template",
+  "main": "./bin/www",
+  "author": "DanCodes <dan@dancodes.online>",
+  "repository": "https://github.com/MayorChano/NodeJS",
+  "keywords": [
+    ""
+  ],
   "scripts": {
     "start": "node ./bin/www",
     "postinstall": "mongod --dbpath=./src/data --quiet --port 1212 --logpath ./src/data/output/log.log --fork",
     "newroute": "echo \"const express = require('express');\nconst router = express.Router();\n\nrouter.get('/', (req, res) => {\n  res.render('index');\n});\n\n\nmodule.exports = router;\" >> src/routes/newRoute.js",
-    "name": "node src/tests/setup.js"
+    "setup": "node src/tests/setup.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -17,6 +24,7 @@
     "express-session": "^1.16.1",
     "helmet": "^3.18.0",
     "http-errors": "^1.7.2",
+    "inquirer": "^6.3.1",
     "memwatch-next": "^0.3.0",
     "mongodb": "^3.2.4",
     "mongoose": "^5.5.8",
@@ -25,47 +33,5 @@
     "path": "^0.12.7",
     "time-ago": "^0.2.1"
   },
-  "description": "",
-  "main": "./bin/www",
-  "keywords": [
-    ""
-  ],
-  "build": {
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "DanCodes",
-        "repo": ""
-      }
-    ],
-    "appId": "online.dancodes.",
-    "copyright": "DanCodes 2019",
-    "mac": {
-      "target": [
-        "dmg",
-        "zip"
-      ],
-      "publish": "github",
-      "category": "public.app-category."
-    },
-    "win": {
-      "target": [
-        "nsis",
-        "portable"
-      ],
-      "publish": "github",
-      "publisherName": "DanCodes"
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "zip",
-        "deb"
-      ],
-      "publish": "github",
-      "maintainer": "DanCodes <dan@dancodes.online>"
-    }
-  },
-  "author": "DanCodes <dan@dancodes.online>",
   "license": "MIT"
 }
