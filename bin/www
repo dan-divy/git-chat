@@ -78,6 +78,14 @@ function onError(error) {
   }
 }
 
+process.on('uncaughtException', (err) => {
+  console.error(`${err.name} error: ${err.stack}`);
+});
+
+process.on('unhandledRejection', (err) => {
+  console.error(`${err.name} error: ${err.stack}`);
+});
+
 /**
  * Event listener for HTTP server "listening" event.
  */
