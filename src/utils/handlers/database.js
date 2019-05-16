@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 const config = require('../../../package');
 
-const mon = mongoose.connect('mongodb://localhost:1212/' + config.name, {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:1212/' + config.name, {useNewUrlParser: true})
+    .catch(err => console.error(err.name +  ' error: ' + err));
 
 const schema = new mongoose.Schema({
     key: mongoose.Schema.Types.Mixed,
     value: mongoose.Schema.Types.Mixed
 }, {
     strict:false
-})
+});
 
 var Db = mongoose.model('database', schema);
 
