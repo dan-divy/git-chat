@@ -1,10 +1,10 @@
 {
-  "name": "template",
+  "name": "nodejs",
   "port": 80,
-  "version": "3.0.0",
-  "description": "NodeJS start template",
+  "version": "3.1.9",
+  "description": "A nodejs template",
   "main": "./bin/www",
-  "author": "DanCodes <dan@dancodes.online>",
+  "author": "MayorChano <dan@dancodes.online>",
   "repository": "https://github.com/MayorChano/NodeJS",
   "keywords": [
     ""

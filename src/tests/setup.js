@@ -32,11 +32,6 @@ var questions = [
     name: 'repo',
     message: "Git Repo (Optional): ",
 },
-{
-    type: 'input',
-    name: 'image',
-    message: "Image link or path (Optional): ",
-},
 ]
   console.log('\nThese answers will be written to package.json for publishing! Enjoy -DanCodes\n')
   inquirer.prompt(questions).then(answers => {
