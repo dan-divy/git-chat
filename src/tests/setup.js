@@ -1,9 +1,6 @@
 const editJsonFile = require("edit-json-file");
-
-let file = editJsonFile(`${__dirname.split('/src')[0]}/package.json`);
-
-
 const inquirer = require('inquirer');
+
 var questions = [
 {
     type: 'input',
@@ -35,11 +32,18 @@ var questions = [
     name: 'repo',
     message: "Git Repo (Optional): ",
 },
+{
+    type: 'input',
+    name: 'image',
+    message: "Image link or path (Optional): ",
+},
 ]
-  
+  console.log('\nThese answers will be written to package.json for publishing! Enjoy -DanCodes\n')
   inquirer.prompt(questions).then(answers => {
-    file.set('name', answers['name'].toLowerCase());
-    file.set('version', answers['version']);
+     
+    var file = editJsonFile(`${__dirname.split('/src')[0]}/package.json`);
+    file.set("name", answers['name'].toLowerCase());
+    file.set("version", answers['version']);
     file.set("description", answers['description']);
     file.set("author", `${answers['username']} <${answers['email']}>`);
     if(answers['repo']) file.set("repository", answers['repo'])
