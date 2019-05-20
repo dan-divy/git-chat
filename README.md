@@ -6,7 +6,7 @@ Links
 
 # Setup
 
-```npm i edit-json-file inquirer; npm run setup```
+```npm run setup```
 
 ```npm install```
 
