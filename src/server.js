@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const helmet = require('helmet');
+const Sentry = require('@sentry/node');
+Sentry.init({ dsn: 'https://b96c20bfd4fd4748bc7cd682a560685b@sentry.io/1463901' });
 
 const database = require('./utils/handlers/database');
 
@@ -24,6 +26,7 @@ const cooky = {
   	saveUninitialized: true
 }
 
+app.use(Sentry.Handlers.requestHandler());
 app.set('trust proxy', 1);
 app.use(helmet());
 app.use(session(cooky));
@@ -36,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api', restApi);
 // catch 404 and forward to error handler
+app.use(Sentry.Handlers.errorHandler());
 app.use(function(req, res, next) {
   next(createError(404));
 });

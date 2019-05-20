@@ -17,6 +17,7 @@
     "setup": "echo 'Installing packages for setup...'; npm i edit-json-file inquirer file-system --silent --quiet --loglevel=silent &>/dev/null; echo 'Packages for setup installed'; node src/tests/setup.js; echo 'To finish run npm install; npm start '"
   },
   "dependencies": {
+    "@sentry/node": "^5.2.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "edit-json-file": "^1.2.1",
