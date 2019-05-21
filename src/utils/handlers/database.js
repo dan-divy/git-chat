@@ -18,13 +18,15 @@ const functions = {
         Db
         .find({})
         .exec((err, docs) => {
-            if (err) return cb(err, false);
+            if (err) {
+                return cb(err, false);
+            }
             if(docs) {
                 return cb(null, docs);
             } else {
-                return cb(null, false)
+                return cb(null, false);
             }
-        })
+        });
     },
 
 
