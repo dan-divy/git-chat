@@ -13,12 +13,11 @@ Links
 ```npm start```
 
 ## Authors
- - [Dan](https://github.com/MayorChano)
+- [Dan](https://github.com/MayorChano)
 
 ## Features
 
 * 
-
 
 ## To Do's
 
