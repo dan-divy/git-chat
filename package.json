@@ -1,7 +1,7 @@
 {
   "name": "nodejs",
   "port": 80,
-  "version": "3.1.9",
+  "version": "3.1.10",
   "description": "A nodejs template",
   "main": "./bin/www",
   "author": "MayorChano <dan@dancodes.online>",
