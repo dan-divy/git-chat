@@ -1,5 +1,7 @@
 [![image](./public/images/image.png)](https://dancodes.online)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/15025ce27628484fbe0ced9c837811ca)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MayorChano/NodeJS&amp;utm_campaign=Badge_Grade)
+
 Description
 
 Links
