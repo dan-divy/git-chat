@@ -11,8 +11,8 @@
   ],
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "mongod --dbpath=./src/data --quiet --port 1212 --logpath ./src/data/output/log.log --fork",
-    "mongo": "mongod --dbpath=./src/data --quiet --port 1212 --logpath ./src/data/output/log.log --fork;",
+    "postinstall": "mongod --dbpath=./src/data --quiet --port 27017 --logpath ./src/data/output/log.log --fork",
+    "mongo": "mongod --dbpath=./src/data --quiet --port 27017 --logpath ./src/data/output/log.log --fork;",
     "newroute": "echo \"const express = require('express');\nconst router = express.Router();\n\nrouter.get('/', (req, res) => {\n  res.render('index');\n});\n\n\nmodule.exports = router;\" >> src/routes/newRoute.js",
     "setup": "echo 'Installing packages for setup...'; npm i edit-json-file inquirer file-system --silent --quiet --loglevel=silent &>/dev/null; echo 'Packages for setup installed'; node src/tests/setup.js; echo 'To finish run npm install; npm start '"
   },

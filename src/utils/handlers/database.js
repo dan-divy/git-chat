@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const config = require("../../../package");
 
-mongoose.connect("mongodb://localhost:1212/" + config.name, {useNewUrlParser: true})
+mongoose.connect("mongodb://localhost:27017/" + config.name, {useNewUrlParser: true})
     .catch((err) => console.error(err.name +  " error: " + err + "\n\nTry running npm run mongo"));
 
 const schema = new mongoose.Schema({
