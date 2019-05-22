@@ -30,9 +30,7 @@
     "mongodb": "^3.2.4",
     "mongoose": "^5.5.8",
     "morgan": "^1.9.1",
-    "newsapi": "^2.4.0",
-    "path": "^0.12.7",
-    "time-ago": "^0.2.1"
+    "path": "^0.12.7"
   },
   "license": "MIT"
 }
