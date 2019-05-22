@@ -1,4 +1,4 @@
-const config = require('./package.json')
+const config = require('./package.json');
 module.exports = {
   apps : [{
     name: config.name,
@@ -7,4 +7,4 @@ module.exports = {
     autorestart: true,
     max_memory_restart: '1G'
   }]
-}
+};
