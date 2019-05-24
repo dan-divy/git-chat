@@ -70,3 +70,4 @@ public/feeds/
 
 # database data
 src/data
+src/config/config.js
