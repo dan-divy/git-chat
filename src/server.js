@@ -11,6 +11,7 @@ const database = require("./utils/handlers/database");
 
 const indexRouter = require("./routes/index");
 const restApi = require("./routes/api/v1/index");
+const authRouter = require("./routes/auth.js");
 
 const app = express();
 // view engine setup
@@ -34,6 +35,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/api", restApi);
+app.use("/authorize", authRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
