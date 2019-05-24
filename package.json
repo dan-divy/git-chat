@@ -28,7 +28,7 @@
     "http-errors": "^1.7.2",
     "inquirer": "^6.3.1",
     "mongodb": "^3.2.6",
-    "mongoose": "^5.5.10",
+    "mongoose": "^5.5.11",
     "morgan": "^1.9.1",
     "path": "^0.12.7"
   },
