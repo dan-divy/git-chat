@@ -21,14 +21,22 @@ passport.use(new GitHubStrategy(githubAuthConfig, function(accessToken, refreshT
   }
 ));
 
-app.get('/',
+passport.serializeUser(function(user, cb) {
+    cb(null, user);
+});
+  
+  passport.deserializeUser(function(obj, cb) {
+    cb(null, obj);
+});
+
+router.get('/github',
   passport.authenticate('github'));
 
-app.get('/callback', 
+router.get('/github/callback', 
   passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
-    // Successful authentication, redirect home.
+    req.session.user = req.session.passport.user.value
     res.redirect('/');
-  });
+});
 
-module.exports = app;
+module.exports = router;

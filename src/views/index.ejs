@@ -6,9 +6,9 @@
             <div class="container">
                 <div class="intro-text">
                     <h1 id="demo" class="intro-lead-in">Git-Chat, <span id="words">connecting collaborators</span></h1>
-                    <span class="intro-heading">Spend less time worrying about front-end and more focusing on your product</span>
+                    <span class="intro-heading">Communicate with collaborators, simply and efficiently so everyone understands.</span>
                     <div class="header-buttons">
-                        <a href="/authorize" target="_blank" class="primary-button">Login with github <i class="fab fa-github"></i></a>
+                        <% if(!user) { %><a href="/auth/github" class="primary-button">Login with github <i class="fab fa-github"></i></a><%}%>
                     </div>
 
                     <div class="header-dashboard"> 
@@ -190,7 +190,7 @@
                 </div>
                 <div class="row outer-margin">
                     <!-- TEAM 1 -->
-                    <div class="col-md-6 team-wrapper">
+                    <div class="col-md-4 team-wrapper">
                         <div class="row team-member">
                             <img src="https://dancodes.online/assets/images/me.png" style="width:100%" alt="">
                             <div class="team-socials">
@@ -206,9 +206,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 team-wrapper">
+                    <div class="col-md-4 team-wrapper">
                         <div class="row team-member">
-                            <img src="https://divy.work/img/my_avatar.png" style="width:100%" alt="">
+                            <img src="<!--https://divy.work/img/my_avatar.png-->" style="width:100%" alt="">
                             <div class="team-socials">
                                 <a style="color: white; font-size: 20px; margin: 5%" href="mailto:dj.srivastava23@gmail.com"><span class="fas fa-envelope"></span></a>
                                 <a style="color: white; font-size: 20px; margin: 5%" href="https://divy.work"><span class="fas fa-mouse-pointer"></span></a>
@@ -226,43 +226,7 @@
             </div>
         </section>
         <!-- FOOTER -->
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <!-- UPPER FOOTER -->
-                    <div class="upper-footer">
-                        <div class="pull-left">
-                            <a class="logo page-scroll" href="#page-top"><img style="width: auto;height: 90px;" src="img/logo-white.png" class="img-responsive" alt=""></a>
-                            <p>Git-Chat is not affiliated with Github. Git-Chat uses github services to work</p>
-                        </div>
-                        <div class="pull-right">
-                            <ul class="footer-nav">
-                                <li class="">
-                                    <a class="page-scroll" href="/">Home</a>
-                                </li>
-                            </ul>
-                            <ul class="footer-secondary-nav">
-                                <li class="">
-                                    <a style="margin-top: 2%; font-size: 20px" class="page-scroll" href="mailto:dan@dancodes.online"><span class="fa fa-envelope"></span>dan@dancodes.online</a>
-                                </li>
-                                <li class="">
-                                    <a style="margin-top: 2%; font-size: 20px" class="page-scroll" href="https://github.com/dan-divy/"><span class="fab fa-github"></span> Github</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="lower-footer">
-                        <div class="pull-left">
-                            <span>© <script>document.write(new Date().getFullYear())</script> Git-Chat. All rights reserved </span>
-                            <a href="#"> Terms of Service </a>
-                            <a href="#"> Privacy Policy </a>
-                        </div>
-                        
-                    </div>
-                    <!-- END LOWER FOOTER -->
-                </div>
-            </div>
-        </footer>
+        <% include main/footer.ejs %>
         <script>
         window.addEventListener('load', function() {
             setTimeout(() => {
@@ -272,10 +236,9 @@
             var i = 0;
             var l = true;
             var x = true;
-            var words = ['helping', 'connecting', 'communicating', 'saving', 'running', 'compiling']; /* The text */
+            var words = ['helping communities', 'connecting collaborators', 'communicating with developers', 'saving time and energy', 'fixing bugs faster', 'made by Dan & Divy']; /* The text */
             var speed = 100; /* The speed/duration of the effect in milliseconds */
             var wait = 7000;
-
             function typeWriter() {
                 setInterval(() => {
                     if(!l) return;
@@ -290,7 +253,7 @@
                             x = true;
                             i = 0;
                             l = false;
-                            return setInterval(() => {l = true}, wait);
+                            return int = setTimeout(() => {l = true}, wait);
                         }
                         txt.push(words[0][i])
                         i++;
@@ -299,28 +262,5 @@
                 }, speed)
             }
         </script>
-        <!-- END FOOTER -->
-        <!-- SCRIPTS -->
-        <!-- jQuery & Bootstrap -->
-        <script src="js/jquery.js"></script>
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- smoothscroll  -->
-        <script src="js/smoothscroll.js"></script>
-        <!-- piechart  -->
-        <script src="js/jquery.easytabs.min.js"></script>
-        <!-- tabs  -->
-        <script src="js/piechart.js"></script>
-        <!-- animated header -->
-        <script src="js/particles.js" type="text/javascript"></script>
-        <!-- sliders -->
-        <script src="js/owl.carousel.min.js"></script>
-        <!-- contact form -->
-        <script src="js/jqBootstrapValidation.js"></script>
-        <script src="js/contact_me.js"></script>
-        <!-- google map -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6EUUQ9DSc3iyu0uNEcTYTYJbX-K5XA3Q&sensor=false"></script>
-        <!-- custom script -->
-        <script src="js/scripts.js"></script>
     </body>
 </html>
