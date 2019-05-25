@@ -5,10 +5,19 @@ var express = require('express');
 var app = express.Router();
 
 passport.use(new GitHubStrategy(githubAuthConfig, function(accessToken, refreshToken, profile, cb) {
-    /**User.findOrCreate({ githubId: profile.id }, function (err, user) {
+  console.info(profile);  
+  User
+  .findOne({ id: profile.id })
+  .exec(function (err, user) {
+      if(err) throw err;
+      if(user) return cb(null, user);
+      var newProfile = new User({
+        id: profile.id,
+        username: profile.username,
+        email: profile.email
+      });
       return cb(err, user);
-    });**/
-    console.info(profile);
+    });
   }
 ));
 
