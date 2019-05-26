@@ -9,9 +9,11 @@ const config = require('../config/config');
 passport.use(new GitHubStrategy({
     clientID: config.clientID,
     clientSecret: config.clientSecret,
-    callbackURL: config.callbackURL
+    callbackURL: config.callbackURL,
+    scope: 'user,repo'
   },
   function(accessToken, refreshToken, profile, cb) {
+    console.log(profile)
     db.findOrCreate(profile, function (err, user) {
       return cb(err, user);
     });
@@ -32,7 +34,7 @@ router.get('/github',
 router.get('/github/callback', 
   passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
-    req.session.user = req.session.passport.user.value
+    req.session.user = req.session.passport;
     res.redirect('/');
 });
 

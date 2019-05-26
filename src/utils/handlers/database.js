@@ -57,11 +57,10 @@ const functions = {
     findOrCreate(profile, cb) {
         this.get(profile.id, function(err, user) {
             if(!user) {
-                let newUser = {
-                    username: profile.username
-                }
-                require('./database').set(profile.id, newUser, function(){})
-                cb(null, newUser)
+                let newUser = profile._json;
+                require('./database').set(profile.id, newUser, function(){
+                    cb(null, newUser);
+                })
             } else {
                 cb(null, user)
             }
