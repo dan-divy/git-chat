@@ -1,9 +1,8 @@
-const express = require("express");
-const router = express.Router();
-const passport = require("passport");
-const GitHubStrategy = require("passport-github").Strategy;
-const db = require("../utils/handlers/database");
-const config = require('../config/config');
+var passport = require('passport');
+var GitHubStrategy = require('passport-github').Strategy;
+var githubAuthConfig = require('../config/config').github;
+var express = require('express');
+var app = express.Router();
 
 
 passport.use(new GitHubStrategy({
