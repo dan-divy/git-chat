@@ -1,9 +1,9 @@
 var passport = require('passport');
 var GitHubStrategy = require('passport-github').Strategy;
-var githubAuthConfig = require('../config/config').github;
+var config = require('../config/config');
 var express = require('express');
-var app = express.Router();
-
+var router = express.Router();
+var db = require('../utils/handlers/database')
 
 passport.use(new GitHubStrategy({
     clientID: config.clientID,
