@@ -7,6 +7,10 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const helmet = require("helmet");
 const passport = require("passport");
+const config = require('./config/config');
+
+const Sentry = require('@sentry/node');
+Sentry.init({ dsn: config.dsn });
 
 const database = require("./utils/handlers/database");
 
