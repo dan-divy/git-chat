@@ -9,8 +9,10 @@ const helmet = require("helmet");
 const passport = require("passport");
 const config = require('./config/config');
 
-const Sentry = require('@sentry/node');
-Sentry.init({ dsn: config.dsn });
+if(config.dsn.length > 10) {
+  const Sentry = require('@sentry/node');
+  Sentry.init({ dsn: config.dsn });
+}
 
 const database = require("./utils/handlers/database");
 
