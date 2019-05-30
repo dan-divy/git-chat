@@ -2,6 +2,8 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/15025ce27628484fbe0ced9c837811ca)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MayorChano/NodeJS&amp;utm_campaign=Badge_Grade)
 
+[![CircleCI](https://circleci.com/gh/dan-divy/git-chat.svg?style=svg)](https://circleci.com/gh/dan-divy/git-chat)
+
 Description
 
 Links
