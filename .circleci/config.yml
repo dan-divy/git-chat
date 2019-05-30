@@ -14,8 +14,11 @@ jobs:
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
+          name: install-node-new
+          command: 'sudo npm install -g n; sudo n stable'
+      - run:
           name: install-npm-wee
-          command: sudo npm install
+          command: 'sudo npm install'
       - save_cache: # special step to save the dependency cache
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
