@@ -10,7 +10,7 @@
     ""
   ],
   "scripts": {
-    "test": "test -f ./config/config.js || echo 'module.exports = {}' >> ./config/config.js; node ./bin/www test",
+    "test": "test -f ./src/config/config.js || mkdir ./src/config; echo 'module.exports = {}' >> ./src/config/config.js; node ./bin/www test",
     "start": "node ./bin/www",
     "postinstall": "mkdir ./src/data; mkdir ./src/data/output;echo '' >> ./src/data/output/log.log; mongod --dbpath=./src/data --quiet --port 27017 --logpath ./src/data/output/log.log --fork; echo '\nYou can now start with npm start!\n",
     "mongo": "mkdir ./src/data;mkdir ./src/data/output; echo '' >> ./src/data/output/log.log;mongod --dbpath=./src/data --quiet --port 27017 --logpath ./src/data/output/log.log --fork;",
