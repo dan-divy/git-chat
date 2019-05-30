@@ -20,9 +20,6 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run:
-          name: mongo-start
-          command: 'npm run mongo'
       - run: # run tests
           name: test
           command: npm test
