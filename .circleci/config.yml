@@ -3,7 +3,7 @@ jobs:
   build: 
     working_directory: ~/git-chat
     docker: 
-      - image: circleci/node:4.8.2 
+      - image: circleci/node:latest
       - image: mongo:3.4.4 
     steps: 
       - checkout
@@ -13,9 +13,6 @@ jobs:
       - restore_cache: # special step to restore the dependency cache
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: install-node-new
-          command: 'sudo npm install -g n; sudo n stable'
       - run:
           name: install-npm-wee
           command: 'sudo npm install'
