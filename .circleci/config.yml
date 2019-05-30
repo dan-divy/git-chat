@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/git-chat
     docker: 
       - image: circleci/node:latest
-      - image: mongo:3.4.4 
+      - image: mongo:latest
     steps: 
       - checkout
       - run:
