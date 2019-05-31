@@ -4,7 +4,7 @@ console.log('\033c')
 const app = require('../src/server');
 const http = require('http');
 const config = require('../package.json');
-if(process.argv.find(x => x == 'test')) {
+if(process.argv.find((x) => x == 'test')) {
   config.port = 1212;
 }
 // Msg
