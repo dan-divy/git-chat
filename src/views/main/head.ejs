@@ -16,86 +16,28 @@
 
         <!-- FAVICON  -->
         <link rel="icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+
+        <!-- Dashboard Core -->
+        <link rel="stylesheet" href="/css/dashboard.css">
+        <script src="/js/dashboard.js"></script>
+        <!-- c3.js Charts Plugin -->
+        <link href="/plugins/charts-c3/plugin.css" rel="stylesheet" />
+        <script src="/plugins/charts-c3/plugin.js"></script>
+        <!-- Google Maps Plugin -->
+        <link href="/plugins/maps-google/plugin.css" rel="stylesheet" />
+        <script src="/plugins/maps-google/plugin.js"></script>
+        <!-- Input Mask Plugin -->
+        <script src="/plugins/input-mask/plugin.js"></script>
     </head>
     <body>
         <!-- PRELOADER -->
         <div id="preloader">
             <div class="spinner"></div>
         </div>
-        <!-- LIVE PREVIEW CUSTOMIZER -->
-        <div id="customizer" class="hidden-xs">
-            <span>HEADERS</span>
-            <ul id="headerbg">
-                <li>
-                    <a href="/demo1" class="active">Dashboard - Particles</a>
-                </li>
-                <li>
-                    <a href="/demo2">Mobile - Particles</a>
-                </li>
-                 <li>
-                    <a href="/demo3">Subscribe - Particles</a>
-                </li>
-                  <li>
-                    <a href="/demo4">Dashboard - Video</a>
-                </li>
-                  <li>
-                    <a href="/demo5">Mobile - Video</a>
-                </li>
-                <li>
-                    <a href="/demo6">Subscribe - Video</a>
-                </li>
-                <li>
-                    <a href="/demo7">Dashboard - Image</a>
-                </li>
-                <li>
-                    <a href="/demo8">Mobile - Image</a>
-                </li>
-                <li>
-                    <a href="/demo9">Subscribe - Image</a>
-                </li>
-                <li>
-                    <a href="/demo10">Video & Form - Particles</a>
-                </li>
-                <li>
-                    <a href="/demo11">Video & Form - Video</a>
-                </li>
-                <li>
-                    <a href="/demo12">Video & Form - Image</a>
-                </li>
-          </ul>
-            <span>COLORS</span>
-            <ul id="colors">
-                <li>
-                    <a id="blue"></a>
-                </li>
-                <li>
-                    <a id="green"></a>
-                </li>
-                 <li>
-                    <a id="teal"></a>
-                </li>
-                  <li>
-                    <a id="indigo"></a>
-                </li>
-                  <li>
-                    <a id="magenta"></a>
-                </li>
-                <li>
-                    <a id="orange"></a>
-                </li>
-          </ul>
-          <ul id="supportbg">
-          <span>SUPPORT</span>
-                <li>
-                    <a target="_blank" href="http://Git-Chat.keydesign-themes.com/documentation/">Documentation</a>
-                </li>
-                <li>
-                    <a target="_blank" href="http://keydesign.ticksy.com">Submit a Ticket</a>
-                </li>
-          </ul>
-        </div>
+          
         <!-- MAIN NAV -->
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <!--<nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
@@ -103,11 +45,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <!-- MAIN NAV LOGO -->
                     <a class="logo page-scroll" href="#header"><img src="img/logo-white.png" class="img-responsive" alt=""></a>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
-                    <!-- MAIN NAV LINKS -->
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a class="page-scroll" href="/">Home</a>
@@ -124,7 +64,96 @@
                         </li>
                         <% } %>
                     </ul>
-                    <!-- END MAIN NAV LINKS -->
                 </div>
             </div>
         </nav>
+        -->
+        <div class="header py-4">
+          <div class="container">
+            <div class="d-flex">
+              <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+                <span class="header-toggler-icon"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="header d-lg-flex p-0 collapse" id="headerMenuCollapse">
+          <div class="container">
+            <div class="row align-items-center">
+                <% if(user) { %><div class="dropdown d-none d-md-flex">
+                  <a class="nav-link icon" data-toggle="dropdown">
+                    <i class="fa fa-bell"></i>
+                    <span class="nav-unread"></span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                    <a href="#" class="dropdown-item d-flex">
+                      <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/male/41.jpg)"></span>
+                      <div>
+                        <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
+                        <div class="small text-muted">10 minutes ago</div>
+                      </div>
+                    </a>
+                    <a href="#" class="dropdown-item d-flex">
+                      <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/1.jpg)"></span>
+                      <div>
+                        <strong>Alice</strong> started new task: Tabler UI design.
+                        <div class="small text-muted">1 hour ago</div>
+                      </div>
+                    </a>
+                    <a href="#" class="dropdown-item d-flex">
+                      <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/18.jpg)"></span>
+                      <div>
+                        <strong>Rose</strong> deployed new version of NodeJS REST Api V3
+                        <div class="small text-muted">2 hours ago</div>
+                      </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
+                  </div>
+                </div> 
+                <div class="dropdown">
+                  <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                    <span class="avatar" style="background-image: url(<%= user.avatar_url %>)"></span>
+                    <span class="ml-2 d-none d-lg-block">
+                      <span class="text-default"><%= user.username %></span>
+                      <small class="text-muted d-block mt-1"><%= user.public_repos %> repositories</small>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                    <a class="dropdown-item" href="#">
+                      <i class="dropdown-icon fa fa-user"></i> Profile
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="dropdown-icon fa fa-cog"></i> Settings
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <span class="float-right"><span class="badge badge-primary">6</span></span>
+                      <i class="dropdown-icon fa fa-at"></i> Mentions
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/auth/logout">
+                      <i class="dropdown-icon fa fa-sign-out-alt"></i> Sign out
+                    </a>
+                  </div>
+                </div>
+                <% } %>
+              <div class="col-lg order-lg-first">
+                <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+                  <li class="nav-item">
+                    <a class="header-brand" href="./index.html">
+                        <img src="/img/logo-white.png" class="header-brand-img" alt="tabler logo">
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/" class="nav-link"><i class="fa fa-home"></i> Home</a>
+                  </li>
+                  <% if(user) { %>
+                  <li class="nav-item dropdown">
+                    <a href="/<%= user.username %>/repos" class="nav-link"><i class="fab fa-github"></i> Repositories</a>
+                  </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>

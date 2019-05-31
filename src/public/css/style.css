@@ -101,7 +101,7 @@ section .section-subheading {
     font-style: normal;
     line-height: 1;
     margin-top: 25px;
-    color: #666666;
+    color: #fff;
     font-weight: 400;
 }
 .separator {
@@ -591,7 +591,6 @@ header .intro-text .intro-heading {
     display: block;
 }
 header .intro-text {
-    padding-top: 165px;
     padding-bottom: 0;
 }
 header .intro-text .intro-lead-in {
@@ -639,7 +638,7 @@ header .container {
 }
 .service-heading {
     text-transform: none;
-    color: #333;
+    color: #fff;
     font-size: 22px;
     margin-top: 0;
     line-height: 22px;
@@ -1135,7 +1134,7 @@ header .container {
     letter-spacing: -1px;
     line-height: 1.65;
     text-align: center;
-    color: #333;
+    color: #fff;
     margin: auto;
     font-family: WorkSans;
     max-width: 850px;
