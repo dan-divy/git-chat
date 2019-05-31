@@ -1,8 +1,104 @@
-### v3.0.0
-- [mongo](https://github.com/MayorChano/NodeJS/commit/0aeadb96074b3bfbb1e07b6a610ae13bb11c62c3) ([MayorChano](https://dancodes.online))
-- [mongo stuff](https://github.com/MayorChano/NodeJS/commit/407cd901faf810f3d91a04ee01cae70cfb2803bd) ([MayorChano](https://dancodes.online))
-- [error catching](https://github.com/MayorChano/NodeJS/commit/9e5c33544fd622d9974cd0ddc9ea95f88ec3091a) ([MayorChano](https://dancodes.online))
-- [new](https://github.com/MayorChano/NodeJS/commit/2c0e9d386fa96ea52ec4ffcf1039ac16c474287d) ([MayorChano](https://dancodes.online))
-- [uneeded](https://github.com/MayorChano/NodeJS/commit/ae13e47072f09205560d8f7eb9dcedfbcaabe87f) ([MayorChano](https://dancodes.online))
-- [+17 more](https://github.com/MayorChano/NodeJS/compare/0aeadb96074b3bfbb1e07b6a610ae13bb11c62c3%5E...v3.0.0)
-
+# git-chat v1.0.0
+ - [68b376c](../../commit/68b376ccbe9e781d7982ee1d3ceac2581fdd971d)     -      codacy
+ - [8e268c6](../../commit/8e268c6e63f85cb6b361b4def082144d4e20ef96)     -      maybe it will start
+ - [59e9baf](../../commit/59e9bafc80244cb056dca8f9bf163b605c6c6563)     -      better test
+ - [04a4f2d](../../commit/04a4f2da6bda26ccdbdc24dfd92d86de36d6e332)     -      Update README.md
+ - [8938b4c](../../commit/8938b4cfd52e89edd90564935bebe9072e7471e9)     -      sentry stuff
+ - [9e50dfd](../../commit/9e50dfdf3ab0454ed95e1a17596bab325c9087a3)     -      fix package test
+ - [c24c66a](../../commit/c24c66a4d49958156808d637ccba9107f0d64498)     -      oops
+ - [0cb1968](../../commit/0cb1968e7105deca028e69cce089038b3e524485)     -      test
+ - [0bd34fd](../../commit/0bd34fdf2c1aeab7494f3604b8fe389e0dcf1a51)     -      Merge branch 'master' of https://github.com/dan-divy/git-chat
+ - [a248de4](../../commit/a248de4be27bf5b9ae9960966205d9fdaa455804)     -      stuff
+ - [891ae19](../../commit/891ae1917a23855775ac3799a66386a0bb165878)     -      Update config.yml
+ - [df0d610](../../commit/df0d610d82bd3d268636a9872e227a399a5109f5)     -      Update config.yml
+ - [46225cd](../../commit/46225cdfa95a9038793fd2b5de4446cc81b2aafd)     -      Update config.yml
+ - [6c0e8a9](../../commit/6c0e8a9163119e4be1476fd3e1a3f1108d6a7406)     -      Update config.yml
+ - [36d28f0](../../commit/36d28f09f59f7ba347703c81a431eff2caf191a0)     -      Update config.yml
+ - [a788d03](../../commit/a788d03f12ba242f5a5254f59cbf246e02bdb726)     -      Update config.yml
+ - [222500f](../../commit/222500ff325231097e7c1c324ab7c6f19e16911a)     -      Create config.yml
+ - [02fb764](../../commit/02fb764db52a04f13533b25de64e660409ea9245)     -      Merge pull request #7 from dan-divy/MayorChano-patch-1
+ - [ccecea8](../../commit/ccecea8cd09b8553922034c8d1dd245b9ede0e0f)     -      Not needed, testing checks
+ - [80ac23b](../../commit/80ac23bdcfd08d8ccfef5d22f8e998f8c949c4e9)     -      move stuff
+ - [1db534c](../../commit/1db534c588dbc8f7f638c35416a3a3abfb4100a8)     -      now.json
+ - [3b40d64](../../commit/3b40d6423d0f75bf4a24829551e4d68b2e7a76fb)     -      Sentry integration
+ - [7820e63](../../commit/7820e6340ec723d75180ed0f1a0d8899980d8bbd)     -      other tabs
+ - [22920ff](../../commit/22920ff90906b8f51640f9303d01f08a17527e00)     -      Merge pull request #6 from dan-divy/dependabot/npm_and_yarn/express-4.17.1
+ - [01478e7](../../commit/01478e7f8dc64bc6814bdb8bd3a58b5248002a4f)     -      fix
+ - [769fc1d](../../commit/769fc1db36088a57ae2780e3cca4c19e1abd14b5)     -      Bump express from 4.17.0 to 4.17.1
+ - [0d0e19d](../../commit/0d0e19d6e16901095da72e3ba52c4011e2424a2e)     -      Create config.js
+ - [f2ebcd5](../../commit/f2ebcd5e322229350cc7a64cf6e3d345679816dd)     -      fixes
+ - [bd8f7e6](../../commit/bd8f7e62d8793becc0c3471b7f246c6ecbeb499a)     -      omg no
+ - [17a9898](../../commit/17a98981286662fad8abdbcfae3e1fa271c34e14)     -      /auth
+ - [9cf75db](../../commit/9cf75dbc686c1b98cc820a57afed7f09b6c92ce5)     -      stuff
+ - [5d3aedf](../../commit/5d3aedf26715343d2869f0b9787ee910b4d2ef69)     -      stuff
+ - [223df49](../../commit/223df49243e0d56f334fdb62a8a79b64290fef30)     -      Merge things correctly
+ - [f203807](../../commit/f203807917a969d44c2f6b93e227932c05d80dc2)     -      stuff
+ - [6ed4526](../../commit/6ed45268a650bc847f5b8d8e29f56b62d792c17c)     -      delete
+ - [13203e6](../../commit/13203e68aac0a047e3ef831d37d84f93d9d2c55b)     -      fix
+ - [6192719](../../commit/6192719fe082b9e73799a25ef2c02ad4b7b36af8)     -      lotta changes
+ - [003948f](../../commit/003948f232b4e63dee2b4db877e4b867e69cbab5)     -      add to gitignore
+ - [62e4062](../../commit/62e4062917cd95c46a1bf41c8fc512c140bfb6d3)     -      Merge pull request #4 from dan-divy/dependabot/npm_and_yarn/mongoose-5.5.11
+ - [f71eba5](../../commit/f71eba52b4a6620d29bc6a725396c0fc4d9bbb34)     -      Bump mongoose from 5.5.10 to 5.5.11
+ - [67bac81](../../commit/67bac81d7f2db6f7303a91e84e6ca4cb0b528534)     -      Merge pull request #5 from dan-divy/dependabot/npm_and_yarn/mongodb-3.2.6
+ - [99609dc](../../commit/99609dc1c343b946608283fb9fd18e06cc61c47f)     -      words
+ - [c98f0eb](../../commit/c98f0eb71c27d1bbe5328c9a2470d98b78eff14e)     -      Bump mongodb from 3.2.5 to 3.2.6
+ - [74f7bf5](../../commit/74f7bf542dc9a7416d4a86d3ccc1b6b38407cc4a)     -      Update landing page
+ - [c6a2f66](../../commit/c6a2f66206239291a3333c86d220e438475f9725)     -      Add passport-github
+ - [a72812c](../../commit/a72812ce96286990b8d1014eabbafb6023e0a949)     -      started big
+ - [101c8df](../../commit/101c8df9b67b3a46e819ea6cd101f4c5f9cee72b)     -      Merge pull request #1 from dan-divy/dependabot/npm_and_yarn/mongoose-5.5.10
+ - [9a3753f](../../commit/9a3753fb07c540f2883588c0331532c165ae090e)     -      Merge branch 'master' into dependabot/npm_and_yarn/mongoose-5.5.10
+ - [0b931c8](../../commit/0b931c89816fc010dd8ca5ce03cfe76fb76b08f5)     -      Merge pull request #2 from dan-divy/dependabot/npm_and_yarn/mongodb-3.2.5
+ - [a059832](../../commit/a059832715849be2d2b9ba5c54926a1cc7f24d0b)     -      Merge pull request #3 from dan-divy/dependabot/npm_and_yarn/express-4.17.0
+ - [7698678](../../commit/7698678aac4af8ac38d4817af10eeef912fe692e)     -      Bump express from 4.16.4 to 4.17.0
+ - [3861e7c](../../commit/3861e7c7be64057b093dd25628c2b26cafeb1dc5)     -      Bump mongodb from 3.2.4 to 3.2.5
+ - [da2aa8a](../../commit/da2aa8a1d8b3a17e671c04af961edf321df6b1a2)     -      Bump mongoose from 5.5.8 to 5.5.10
+ - [28597f2](../../commit/28597f21348ae47b473e4cb193a6f4e87e3ee014)     -      cropping
+ - [4a9de3d](../../commit/4a9de3ddcb744a6b187bc9600b65140cae5b2dc9)     -      crop
+ - [bd7b681](../../commit/bd7b6817810c4e4a3ab59e8f81043e2f4bd2f179)     -      images
+ - [edc2264](../../commit/edc22642ffcb5cb83fc90118c75ede417d0ff73b)     -      double quotes
+ - [2e8baf8](../../commit/2e8baf8991db3e99cbb1bb917bd103ef0913e93c)     -      semi-colons
+ - [419e8fa](../../commit/419e8fa828cf749efbeb31b0e3d29b806df787ff)     -      eco-system
+ - [74cfc90](../../commit/74cfc905213ca9855a5464677ce17f236dbc7c47)     -      uneeded packages
+ - [58054a4](../../commit/58054a402751b77dd9237872cf5f60cc530be1d4)     -      4.0.0
+ - [809e809](../../commit/809e809d5530631af0dd415f624ce7871e4d90a2)     -      say its done
+ - [c430256](../../commit/c4302566f61fd95fe2c390abd7cd060f9d28d653)     -      fix stuff
+ - [c7981cd](../../commit/c7981cd06a2704182246ce77805892aeb5060b7c)     -      fixes
+ - [89897c0](../../commit/89897c0df5043fe4d7adaa86bdbaca26cadc79ec)     -      data
+ - [582c75d](../../commit/582c75d4c83b24cbb60f198893f3b94db58cf424)     -      3.1.10
+ - [c77e7ba](../../commit/c77e7ba8973d97497ff123e5ad000756617ca003)     -      Fix
+ - [0d31705](../../commit/0d31705292018a24b358da7788f0665cd0e16fdb)     -      basge
+ - [fd2a33f](../../commit/fd2a33fa5fafcdf872d65b86b7e846572f644a19)     -      double quotes
+ - [a7d9597](../../commit/a7d9597a434773a7ecbf4a5919d03272ec907a3a)     -      setup syntax
+ - [df731f0](../../commit/df731f0618d5b2147366a11cf582605561e39e49)     -      Codacy first half
+ - [5a9db34](../../commit/5a9db34e6c27ec9efca0024c49339d657e63783d)     -      Changelog
+ - [7a31aea](../../commit/7a31aea2e7cc61d5cbb5525b246f7732bb3bb16c)     -      uninstall sentry
+ - [324d148](../../commit/324d14885f65da19a54abaf573936cb851a064b8)     -      I won't
+ - [d701a08](../../commit/d701a08746b75f1427d68a95e309992e586313e6)     -      sentry
+ - [6041c3c](../../commit/6041c3ce37ce8ad9a5df39c34eb2cb6eccb2bf51)     -      setup
+ - [ed822f0](../../commit/ed822f06e3dce5877d493c2bcb4016d2b0dd62e5)     -      stuff
+ - [d073aba](../../commit/d073abab5fc34438a676411be587d6efef6809ce)     -      setup
+ - [16e45ad](../../commit/16e45ad5356e691f7d19bacd1977d0423c2299d9)     -      fix setup
+ - [f6a6cb4](../../commit/f6a6cb47fe605ead42fd37d790982da5e0c8b6f0)     -      oops
+ - [e694f5d](../../commit/e694f5dec8b1d28a49bfe12b12e93065ed88eca7)     -      3.0.0
+ - [0aeadb9](../../commit/0aeadb96074b3bfbb1e07b6a610ae13bb11c62c3)     -      mongo
+ - [407cd90](../../commit/407cd901faf810f3d91a04ee01cae70cfb2803bd)     -      mongo stuff
+ - [9e5c335](../../commit/9e5c33544fd622d9974cd0ddc9ea95f88ec3091a)     -      error catching
+ - [2c0e9d3](../../commit/2c0e9d386fa96ea52ec4ffcf1039ac16c474287d)     -      new
+ - [ae13e47](../../commit/ae13e47072f09205560d8f7eb9dcedfbcaabe87f)     -      uneeded
+ - [4c0944a](../../commit/4c0944ae0db6295fe54fca2ab387cad0842558f5)     -      yay
+ - [6b75f82](../../commit/6b75f8244dfcdd30820f4c3ae3747f2d8c4ec253)     -      new setup
+ - [62aecfe](../../commit/62aecfe5eb1ea729a74c0bc20d1297054f6b8b60)     -      Stuff
+ - [32118f6](../../commit/32118f68dd4351ad93091c69fbbe907086fc70cc)     -      stuff
+ - [847e29d](../../commit/847e29d908169dffad5dbfb28c0fb19b1785596f)     -      accidente
+ - [d4109b4](../../commit/d4109b4f68327d412cbaec68b1c97557a2c798e4)     -      database connect!
+ - [b10b03a](../../commit/b10b03ac0137d844d34b2892e0c1ad4aa9561632)     -      Decided against it
+ - [43de121](../../commit/43de12172bb4a4d50e6bda08e951efede8b8b6ef)     -      test
+ - [c526fa6](../../commit/c526fa6701d15b79907f94baf9cd0cae309ae666)     -      server
+ - [51c0b86](../../commit/51c0b86f8efd70d314219c83c044677d73c97039)     -      move!
+ - [49125d8](../../commit/49125d883b0f8eb3b0760a7637e16c5067d97113)     -      github-templates
+ - [724992b](../../commit/724992b103ec7121740da0195afd0c9aea6d650c)     -      Templating
+ - [288f3fd](../../commit/288f3fd5e134aad1cf2167864747c39993b1367c)     -      More more moree
+ - [d6598a4](../../commit/d6598a48e22880ae2b0679381e7fb341a8538703)     -      semi-helmet
+ - [8c7b68a](../../commit/8c7b68a8e276e8699fabf0e7c33a6a54e892d7d8)     -      CONST
+ - [cec3b45](../../commit/cec3b4546bd979e4fa3632700720338324a96822)     -      readme fix
+ - [7af2a30](../../commit/7af2a305302e6f8713b7dfd0dc2d8406f6d36f3b)     -      NodeJS Template
