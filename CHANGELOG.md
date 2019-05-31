@@ -1,4 +1,6 @@
-# git-chat v1.3.0
+# git-chat v1.4.0
+ - [df457b3](../../commit/df457b3b7e3e77ab3c8a39a38da47bf6a0cba136)     -      1.4.0
+ - [bf60ea9](../../commit/bf60ea9dbf0c24f4f88d4072d74a6a1b1728001a)     -      Changelog update
  - [0765029](../../commit/07650299d034ff9d105f266edeb61ab70b71e042)     -      Changelog update
  - [a649f4b](../../commit/a649f4b1fb98240626050613d86bc9a47e1a3632)     -      Changelog update
  - [68b376c](../../commit/68b376ccbe9e781d7982ee1d3ceac2581fdd971d)     -      codacy
