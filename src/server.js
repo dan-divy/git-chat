@@ -63,6 +63,5 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-if(process.argv.find(x => x == 'test')) process.exit(0);
 
 module.exports = app;

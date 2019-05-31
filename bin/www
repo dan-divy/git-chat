@@ -56,7 +56,9 @@ function onListening() {
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  process.stdout.clearLine(); process.stdout.cursorTo(0); process.stdout.write(config.name + '-v' + config.version + ': Listening on port ' + addr.port + '\n');
+  process.stdout.clearLine(); 
+  process.stdout.cursorTo(0); process.stdout.write(config.name + '-v' + config.version + ': Listening on port ' + addr.port + '\n');
+  if(process.argv.find(x => x == 'test')) process.exit(0);
 }
 
 //Error catching
