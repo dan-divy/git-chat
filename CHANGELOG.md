@@ -1,4 +1,7 @@
-# git-chat v1.0.0
+# git-chat v1.2.0
+ - [b49d436](../../commit/b49d436ab39ec731c724fbfa9b429f81a99c153e)     -      1.2.0
+ - [d495f40](../../commit/d495f40f0c4b5411703f82f1b5f223241d77cf0e)     -      Changelog update
+ - [a649f4b](../../commit/a649f4b1fb98240626050613d86bc9a47e1a3632)     -      Changelog update
  - [68b376c](../../commit/68b376ccbe9e781d7982ee1d3ceac2581fdd971d)     -      codacy
  - [8e268c6](../../commit/8e268c6e63f85cb6b361b4def082144d4e20ef96)     -      maybe it will start
  - [59e9baf](../../commit/59e9bafc80244cb056dca8f9bf163b605c6c6563)     -      better test
