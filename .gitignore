@@ -77,3 +77,4 @@ src/data
 
 #other
 .history/
+.vscode/
