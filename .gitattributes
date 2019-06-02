@@ -3,3 +3,4 @@ src/public/js/* linguist-vendored=true
 src/public/fonts/* linguist-vendored=true
 src/public/plugins/* linguist-vendored=true
 src/public/tabler/* linguist-vendored=true
+*.ejs linguist-language=EJS
