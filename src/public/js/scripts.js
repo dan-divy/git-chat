@@ -72,15 +72,22 @@
       // HEADER PARTICLES EFFECT
 
       if ($(window).width() > 960) {
+        var density = {
+          "enable": true,
+          "value_area": 2000
+        }
+      } else {
+        var density = {
+          "enable": true,
+          "value_area": 500
+        }
+      }
 
         particlesJS("particles-js", {
           "particles": {
             "number": {
               "value": 120,
-              "density": {
-                "enable": true,
-                "value_area": 1800
-              }
+              "density": density
             },
             "color": {
               "value": "#ffffff"
@@ -146,7 +153,7 @@
             "detect_on": "window",
             "events": {
               "onhover": {
-                "enable": true,
+                "enable": false,
                 "mode": "grab"
               },
               "onclick": {
@@ -184,7 +191,7 @@
           "retina_detect": true
         });
 
-      }
+      
 
       // PRELOADER      
 
@@ -204,7 +211,8 @@
       // PIE CHARTS
 
       $(window).bind("scroll", function(event) {
-        $('.chart:in-viewport').easyPieChart({
+        if($('.chart:in-viewport').easyPieChart) {
+          $('.chart:in-viewport').easyPieChart({
           animate: 2000,
           barColor: '#1080f2',
           lineWidth: 3,
@@ -218,6 +226,7 @@
             enabled: true
           }
         });
+      }
       });
 
       //AUTO PLAY YOUTUBE VIDEO
@@ -373,6 +382,7 @@
       }
 
       function scrollPage() {
+        if(!classie) return;
         var sy = scrollY();
         if (sy >= changeHeaderOn) {
           classie.add(header, 'navbar-shrink');

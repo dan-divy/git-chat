@@ -20,13 +20,12 @@
 
         <!-- Dashboard Core -->
         <link rel="stylesheet" href="/css/dashboard.css">
+        <script src="/js/require.min.js"></script>
         <script src="/js/dashboard.js"></script>
         <!-- c3.js Charts Plugin -->
         <link href="/plugins/charts-c3/plugin.css" rel="stylesheet" />
         <script src="/plugins/charts-c3/plugin.js"></script>
         <!-- Google Maps Plugin -->
-        <link href="/plugins/maps-google/plugin.css" rel="stylesheet" />
-        <script src="/plugins/maps-google/plugin.js"></script>
         <!-- Input Mask Plugin -->
         <script src="/plugins/input-mask/plugin.js"></script>
     </head>
@@ -138,14 +137,15 @@
                 </div>
                 <% } %>
               <div class="col-lg order-lg-first">
-                <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                  <li class="nav-item">
-                    <a class="header-brand" href="./index.html">
-                        <img src="/img/logo-white.png" class="header-brand-img" alt="tabler logo">
-                    </a>
-                  </li>
+                <ul style="padding-left: 5%;" class="nav nav-tabs border-0 flex-column flex-lg-row">
+                  <a class="header-brand" style="margin-top:1%" href="./index.html">
+                      <img src="/img/logo-white.png" class="header-brand-img" alt="tabler logo">
+                  </a>
                   <li class="nav-item">
                     <a href="/" class="nav-link"><i class="fa fa-home"></i> Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/about-us" class="nav-link"><i class="fa fa-users"></i> About us</a>
                   </li>
                   <% if(user) { %>
                   <li class="nav-item dropdown">
