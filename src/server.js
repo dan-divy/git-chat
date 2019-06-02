@@ -19,6 +19,7 @@ const database = require("./utils/handlers/database");
 const indexRouter = require("./routes/index");
 const restApi = require("./routes/api/v1/index");
 const authRouter = require("./routes/auth");
+const userRouter = require("./routes/user");
 
 const app = express();
 // view engine setup
@@ -43,6 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use((req,res, next) => {if(!req.session.user) req.session.user = false;next()});
 
+app.use("/", userRouter);
 app.use("/", indexRouter);
 app.use("/api", restApi);
 app.use("/auth", authRouter);

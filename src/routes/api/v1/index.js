@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-	res.sendStatus(200);
-});
+router.all("/*", (req, res, next) => {
+	if(!req.session.user) {
+		return res.status(404).send({error: "session", msg: "User is not logged in");
+	}
+})
 
 module.exports = router;
