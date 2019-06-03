@@ -18,6 +18,7 @@ Links
 
 ## Authors
 - [Dan](https://github.com/MayorChano)
+- [Divy Srivastava](https://github.com/DivySrivastava)
 
 ## Features
 
