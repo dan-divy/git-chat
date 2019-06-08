@@ -1,50 +1,54 @@
-[![image](./src/public/assets/images/logo.png)](https://dancodes.online)
+<p align="center"><img src="./src/public/assets/images/logo.png" style="height:200px;" /></p>
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/15025ce27628484fbe0ced9c837811ca)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MayorChano/NodeJS&amp;utm_campaign=Badge_Grade)
+<p align="center">
+  <a href="https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MayorChano/NodeJS&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/15025ce27628484fbe0ced9c837811ca" alt="Build Status"></a>
+  <a href="https://circleci.com/gh/dan-divy/git-chat"><img src="https://circleci.com/gh/dan-divy/git-chat.svg?style=svg" alt="CircleCI"></a>
+</p>
 
-[![CircleCI](https://circleci.com/gh/dan-divy/git-chat.svg?style=svg)](https://circleci.com/gh/dan-divy/git-chat)
+<p align="center"><code>git clone git@github.com:dan-divy/git-chat.git</code></p>
+<p align="center">Git chat is a web-based utility to collaborate in real-time for your cool Github projects.</p>
 
-Description
+## Motivation and Features
 
-Links
+- Designed keeping real-time communication in mind.
+- Authenticate from your Github account in just one-click.
+- View your pull requests, issues and get reminders.
+- Using the latest Tabler UI.
+- Chat while you code with collaborators.
+- Easiest shit in the world.
 
-# Setup
+### Try it out
 
-```npm run setup```
+Find the working demo freshly deployed on DigitalOcean [here](https://git-chat.dancodes.online).
 
-```npm install```
+## Contributing
 
-```npm start```
+Setup
 
-## Authors
-- [Dan](https://github.com/MayorChano)
-- [Divy Srivastava](https://github.com/DivySrivastava)
+```bash
+$ git clone git@github.com:dan-divy/git-chat.git
+$ cd git-chat
+$ npm run setup
+$ npm i
+```
 
-## Features
+Startup
 
-* 
+```bash
+$ npm start
+```
 
-## To Do's
+## Maintainers
 
-* 
-
-## Installation
-
-* 
-
-## Local Development
-
-* 
-
-## To know
-
-* 
+[![Divy Srivastava](https://avatars.githubusercontent.com/u/2391349?s=130)](https://divy.work/) | [![DanCodes](https://avatars.githubusercontent.com/u/2391349?s=130)](https://dancodes.online) |
+--|
+[Divy Srivastava](https://divy.work/) | [DanCodes](https://dancodes.online)
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2019 DanCodes <dan@dancodes.online>
+Copyright (c) 2019 Dan and Divy Organisation <dan@dancodes.online>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
