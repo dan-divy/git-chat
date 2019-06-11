@@ -35,9 +35,8 @@ const functions = {
             return false;
         }
         var newDoc = new Db({key, value});
-        console.log(JSON.stringify(newDoc));
         newDoc.save();
-        cb(true);
+        cb(newDoc);
     },
 
 
@@ -55,10 +54,16 @@ const functions = {
     },
 
     findOrCreate(profile, cb) {
+        if(!profile.id) {
+            return cb('Login not authenticated', null)
+        }
         this.get(profile.id, function(err, user) {
-            if(!user) {
+            if(!user || !user.mentions) {
                 let newUser = profile._json;
-                require('./database').set(profile.id, newUser, function(){
+                newUser.username = profile._json.login;
+                newUser.mentions = [];
+                newUser.notifications = [];
+                require('./database').set(profile.id, newUser, function(user){
                     cb(null, newUser);
                 })
             } else {

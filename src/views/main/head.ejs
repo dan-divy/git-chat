@@ -20,7 +20,6 @@
 
         <!-- Dashboard Core -->
         <link rel="stylesheet" href="/css/dashboard.css">
-        <script src="/js/require.min.js"></script>
         <script src="/js/dashboard.js"></script>
         <!-- c3.js Charts Plugin -->
         <link href="/plugins/charts-c3/plugin.css" rel="stylesheet" />
@@ -82,32 +81,28 @@
                 <% if(user) { %><div class="dropdown d-none d-md-flex">
                   <a class="nav-link icon" data-toggle="dropdown" onclick="document.getElementById('notifs').classList.toggle('open')">
                     <i class="fa fa-bell"></i>
-                    <span class="nav-unread"></span>
+                    <% if(user.notifications) {%><span class="nav-unread"></span><% } %>
                   </a>
                   <div id="notifs" class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                    <a href="#" class="dropdown-item d-flex">
-                      <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/male/41.jpg)"></span>
-                      <div>
-                        <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
-                        <div class="small text-muted">10 minutes ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item d-flex" >
-                      <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/1.jpg)"></span>
-                      <div>
-                        <strong>Alice</strong> started new task: Tabler UI design.
-                        <div class="small text-muted">1 hour ago</div>
-                      </div>
-                    </a>
-                    <a href="#" class="dropdown-item d-flex">
-                      <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/18.jpg)"></span>
-                      <div>
-                        <strong>Rose</strong> deployed new version of NodeJS REST Api V3
-                        <div class="small text-muted">2 hours ago</div>
-                      </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
+                    <% if(user.notifications && user.notifications > 0) { %>
+                      <%- user.notifications.map(x => `
+                        <a href="/${user.username}/activity?notification=${user.notifications.indexOf(x)}" class="dropdown-item d-flex">
+                        <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/18.jpg)"></span>
+                        <div>
+                          <strong>Rose</strong> deployed new version of NodeJS REST Api V3
+                          <div class="small text-muted">2 hours ago</div>
+                        </div>
+                      </a>
+                      `)%>
+                      <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
+                    <% } else { %>
+                      <a href="#" class="dropdown-item d-flex">
+                        <div>
+                          <strong>No new notifications!</strong>
+                        </div>
+                      </a>
+                    <% } %>
                   </div>
                 </div> 
                 <div class="dropdown">
@@ -126,7 +121,7 @@
                       <i class="dropdown-icon fa fa-cog"></i> Settings
                     </a>
                     <a class="dropdown-item" href="#">
-                      <span class="float-right"><span class="badge badge-primary">6</span></span>
+                      <span class="float-right"><span class="badge badge-primary"><% if(user.mentions && user.mentions.length > 0) {%><%= user.mentions.length %><%} %></span></span>
                       <i class="dropdown-icon fa fa-at"></i> Mentions
                     </a>
                     <div class="dropdown-divider"></div>
@@ -142,10 +137,10 @@
                       <img src="/img/logo-white.png" class="header-brand-img" alt="tabler logo">
                   </a>
                   <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
+                    <a href="/" class="nav-link"><i class="fa fa-home"></i>Home</a>
                   </li>
                   <li class="nav-item">
-                    <a href="/about-us" class="nav-link"> About us</a>
+                    <a href="/about-us" class="nav-link"><i class="fa fa-users"></i> About us</a>
                   </li>
                   <% if(user) { %>
                   <li class="nav-item dropdown">
