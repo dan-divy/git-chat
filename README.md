@@ -30,6 +30,7 @@ $ git clone git@github.com:dan-divy/git-chat.git
 $ cd git-chat
 $ npm run setup
 $ npm i
+$ npm start
 ```
 
 Startup
