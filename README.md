@@ -40,15 +40,13 @@ $ npm start
 
 ## Maintainers
 
-[![Divy Srivastava](https://avatars.githubusercontent.com/u/2391349?s=130)](https://divy.work/) | [![DanCodes](https://avatars.githubusercontent.com/u/2391349?s=130)](https://dancodes.online) |
---|
 [Divy Srivastava](https://divy.work/) | [DanCodes](https://dancodes.online)
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2019 Dan and Divy Organisation <dan@dancodes.online>
+Copyright (c) 2019 Dan-Divy organisation <dan@dancodes.online>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
