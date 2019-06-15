@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const sio = require('../../bin/www').sio;
 
 router.get('/:username', (req, res, next) => {
     if(!req.params.username) {
@@ -8,7 +9,14 @@ router.get('/:username', (req, res, next) => {
     if(!req.session.user || req.params.username != req.session.user.username) {
         return res.redirect('/');
     }
-    return res.render('user', {user: req.session.user});
+    return res.render('user/index', {user: req.session.user});
+});
+
+router.get('/:username/fetch', (req, res, next) => {
+    res.render('user/load', {user:req.session.user});
+    sio.on("connection", function(socket) {
+        
+    })
 })
 
 module.exports = router;

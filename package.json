@@ -1,6 +1,6 @@
 {
   "name": "git-chat",
-  "port": 80,
+  "port": 8080,
   "version": "1.5.0",
   "description": "A chatting client for github",
   "main": "./bin/www",
@@ -12,7 +12,7 @@
   "scripts": {
     "test": "test -f ./src/config/config.js || mkdir ./src/config; echo \"module.exports = {clientID: 'SECRET',clientSecret: 'SECRET',callbackURL: 'SECRET',dsn: 'SECRET'};\" >> ./src/config/config.js; node ./bin/www test",
     "start": "node ./bin/www",
-    "postinstall": "mkdir ./src/data; mkdir ./src/data/output;echo '' >> ./src/data/output/log.log; mongod --dbpath=./src/data --quiet --port 27017 --logpath ./src/data/output/log.log --fork; echo '\nYou can now start with npm start!\n",
+    "postinstall": "mkdir ./src/data; mkdir ./src/data/output;echo '' >> ./src/data/output/log.log; mongod --dbpath=./src/data --quiet --port 27017 --logpath ./src/data/output/log.log --fork; echo '\nYou can now start with npm start!\n'",
     "mongo": "mkdir ./src/data;mkdir ./src/data/output; echo '' >> ./src/data/output/log.log;mongod --dbpath=./src/data --quiet --port 27017 --logpath ./src/data/output/log.log --fork;",
     "newroute": "echo \"const express = require('express');\nconst router = express.Router();\n\nrouter.get('/', (req, res) => {\n  res.render('index');\n});\n\n\nmodule.exports = router;\" >> src/routes/newRoute.js",
     "setup": "echo 'Installing packages for setup...'; npm i edit-json-file inquirer file-system --silent --quiet --loglevel=silent &>/dev/null; echo 'Packages for setup installed'; node src/tests/setup.js; echo 'To finish run npm install; npm start '"
@@ -35,7 +35,8 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "socket.io": "^2.2.0"
   },
   "license": "MIT"
 }

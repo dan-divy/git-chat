@@ -13,6 +13,7 @@ passport.use(new GitHubStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     db.findOrCreate(profile, function (err, user) {
+      user.accessToken = accessToken;
       if(user) return cb(null, user);
         else return cb(err);
     });
@@ -34,7 +35,7 @@ router.get('/github/callback',
   passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
     req.session.user = req.session.passport.user;
-    res.redirect('/');
+    res.redirect('/' + req.session.user.username + '/fetch');
 });
 
 router.get('/logout', (req,res) => {

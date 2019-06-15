@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<% include ../main/head.ejs %>
+
+        <header id="header" style="height:534px"><br><br>
+            <div class="container">
+                <div class="intro-text">
+                    <h1 id="demo" class="intro-lead-in">Welcome to Git-Chat!</span></h1>
+                    <span id="welcome">Thanks for signing up! Give us a minute to create your account!</span><span id="time"></span>
+                    <div class="header-dashboard"> 
+                        <span class="spinner"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="particles-js"></div>
+        </header>
+        <%- include ../main/footer %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script>
+var socket = io();
+setTimeout(() => {
+    socket.emit('fetch');
+}, 1000)
+socket.on('finished', function() {
+    $('#welcome').html('Finished! To continue, click <a href="/">here</a> or wait ')
+    var sec = 10;
+    setInterval(() => {
+        if(sec == 0) {
+            return window.location.href = '/';
+        } else {
+            sec--;
+        }
+        $('#time').text(sec + ' seconds');
+    }, 1000)
+})
+</script>
+    </body>
+</html>

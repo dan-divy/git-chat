@@ -41,13 +41,13 @@ const functions = {
 
 
     get(key, cb) {
-        Db.findOne({key}, function(err, res)  {
-            if (err) {
-                return cb(err, false);
-            }
+        Db.findOne({key: key.toString()}, function(err, res)  {
             if(res) {
                 return cb(null, res);
             } else {
+                if (err) {
+                    return cb(err, false);
+                }
                 return cb(null, false);
             }
         });
@@ -67,7 +67,7 @@ const functions = {
                     cb(null, newUser);
                 })
             } else {
-                cb(null, user)
+                cb(null, user.value)
             }
         })
     }

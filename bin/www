@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-console.log('\033c')
+console.clear()
 // Modules
 const app = require('../src/server');
+const io = require('socket.io');
 const http = require('http');
 const config = require('../package.json');
 if(process.argv.find((x) => x == 'test')) {
@@ -14,6 +15,8 @@ const port = normalizePort(process.env.PORT || config.port);
 app.set('port', port);
 //Start server
 const server = http.createServer(app);
+const sio = io(server); 
+
 //Listening
 server.listen(port);
 server.on('error', onError);
@@ -63,6 +66,7 @@ function onListening() {
   if(process.stdout.cursorTo) process.stdout.cursorTo(0); 
   process.stdout.write(config.name + '-v' + config.version + ': Listening on port ' + addr.port + '\n');
   if(process.argv.find(x => x == 'test')) process.exit(0);
+  require('../src/sockets/index');
 }
 
 //Error catching
@@ -73,3 +77,5 @@ process.on('uncaughtException', (err) => {
 process.on('unhandledRejection', (err) => {
   console.error(`${err.name} error: ${err.stack}`);
 });
+
+module.exports.sio = sio;

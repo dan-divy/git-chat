@@ -21,21 +21,20 @@ const indexRouter = require("./routes/index");
 const restApi = require("./routes/api/v1/index");
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
-
 const app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
 const cooky = {
 	secret: "work hard",
   resave: true,
   expires: new Date() * 60 * 60 * 24 * 7,
   saveUninitialized: true
 };
+app.sessionMiddleware = session(cooky);
 app.set("trust proxy", 1);
 app.use(helmet());
-app.use(session(cooky));
+app.use(app.sessionMiddleware);
 app.use(logger("tiny"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
