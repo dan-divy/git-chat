@@ -74,7 +74,7 @@
                     <span class="avatar" style="background-image: url(<%= user.avatar_url %>)"></span>
                     <span class="ml-2 d-none d-lg-block">
                       <span class="text-default"><%= user.username %></span>
-                      <small class="text-muted d-block mt-1"><%= user.repos.length %> repositories</small>
+                      <% if(user.repos && user.repos.length > 0) { %><small class="text-muted d-block mt-1"><%= user.repos.length %> repositories</small> <% } %>
                     </span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
