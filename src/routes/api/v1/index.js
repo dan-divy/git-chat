@@ -11,7 +11,6 @@ router.all("/*", (req, res, next) => {
 });
 
 router.get("/user/repos", (req, res) => {
-	console.log(req.session.user.repos_url)
 	fetch(req.session.user.repos_url).then(response => {
 		return res.send(response.data);
 	});

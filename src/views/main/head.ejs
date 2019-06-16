@@ -3,7 +3,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="description" content="Git-Chat">
-        <meta name="author" content="KeyDesign" />
         <!-- SITE TITLE -->
         <title>Git-Chat</title>
         <!-- STYLESHEETS -->
@@ -46,7 +45,7 @@
                 <% if(user) { %><div class="dropdown d-none d-md-flex">
                   <a class="nav-link icon" data-toggle="dropdown" onclick="document.getElementById('notifs').classList.toggle('open')">
                     <i class="fa fa-bell"></i>
-                    <% if(user.notifications) {%><span class="nav-unread"></span><% } %>
+                    <% if(user.notifications.length > 0) {%><span class="nav-unread"></span><% } %>
                   </a>
                   <div id="notifs" class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                     <% if(user.notifications && user.notifications > 0) { %>
@@ -75,7 +74,7 @@
                     <span class="avatar" style="background-image: url(<%= user.avatar_url %>)"></span>
                     <span class="ml-2 d-none d-lg-block">
                       <span class="text-default"><%= user.username %></span>
-                      <small class="text-muted d-block mt-1"><%= user.public_repos %> repositories</small>
+                      <small class="text-muted d-block mt-1"><%= user.repos.length %> repositories</small>
                     </span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">

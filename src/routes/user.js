@@ -7,16 +7,13 @@ router.get('/:username', (req, res, next) => {
         return next();
     }
     if(!req.session.user || req.params.username != req.session.user.username) {
-        return res.redirect('/');
+        return next();
     }
     return res.render('user/index', {user: req.session.user});
 });
 
 router.get('/:username/fetch', (req, res, next) => {
     res.render('user/load', {user:req.session.user});
-    sio.on("connection", function(socket) {
-        
-    })
 })
 
 module.exports = router;

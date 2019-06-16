@@ -29,19 +29,31 @@ const functions = {
         });
     },
 
+    save(key, value, cb) {
+        Db.findOne(key, function(err, res)  {
+            if(res) {
+                res = value;
+                res = new Db(res);
+                res.save(function(err, obj) {
+                    cb(err, obj)
+                });
+            }
+        });
+    },
 
     set(key, value, cb) {
         if(!key || !value) {
             return false;
         }
         var newDoc = new Db({key, value});
-        newDoc.save();
-        cb(newDoc);
+        newDoc.save(function(err, doc) {
+            cb(doc);
+        });
     },
 
 
     get(key, cb) {
-        Db.findOne({key: key.toString()}, function(err, res)  {
+        Db.findOne(key, function(err, res)  {
             if(res) {
                 return cb(null, res);
             } else {
@@ -57,17 +69,19 @@ const functions = {
         if(!profile.id) {
             return cb('Login not authenticated', null)
         }
-        this.get(profile.id, function(err, user) {
-            if(!user || !user.mentions) {
+        this.get({key: profile.id.toString()}, function(err, user) {
+            if(!user || !user.repos) {
                 let newUser = profile._json;
                 newUser.username = profile._json.login;
                 newUser.mentions = [];
                 newUser.notifications = [];
-                require('./database').set(profile.id, newUser, function(user){
-                    cb(null, newUser);
+                newUser.repos = [];
+                require('./database').set(profile.id, newUser, function(u) {
+                    cb(null, user);
                 })
             } else {
-                cb(null, user.value)
+                console.log('Found User: ' + user);
+                cb(null, user)
             }
         })
     }

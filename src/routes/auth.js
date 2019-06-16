@@ -13,8 +13,10 @@ passport.use(new GitHubStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     db.findOrCreate(profile, function (err, user) {
-      user.accessToken = accessToken;
-      if(user) return cb(null, user);
+      user.value.accessToken = accessToken;
+      user.value.username = user.value.login;
+      user.value._id = user._id;
+      if(user) return cb(null, user.value);
         else return cb(err);
     });
   }

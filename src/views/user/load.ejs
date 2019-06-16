@@ -25,11 +25,11 @@ setTimeout(() => {
     socket.emit('fetch');
 }, 1000)
 socket.on('finished', function() {
-    $('#welcome').html('Finished! To continue, click <a href="/">here</a> or wait ')
+    $('#welcome').html('Finished! To continue, click <a href="/cache">here</a> or wait ')
     var sec = 10;
     setInterval(() => {
         if(sec == 0) {
-            return window.location.href = '/';
+            return window.location.href = '/cache';
         } else {
             sec--;
         }

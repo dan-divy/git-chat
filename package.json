@@ -1,6 +1,6 @@
 {
-  "name": "git-chat",
-  "port": 8080,
+  "name": "git-chat-dev",
+  "port": 9393,
   "version": "1.5.0",
   "description": "A chatting client for github",
   "main": "./bin/www",
