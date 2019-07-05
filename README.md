@@ -3,6 +3,7 @@
 <p align="center">
   <a href="https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MayorChano/NodeJS&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/15025ce27628484fbe0ced9c837811ca" alt="Build Status"></a>
   <a href="https://circleci.com/gh/dan-divy/git-chat"><img src="https://circleci.com/gh/dan-divy/git-chat.svg?style=svg" alt="CircleCI"></a>
+  <a href="https://deepscan.io/dashboard#view=project&tid=4302&pid=6070&bid=48585"><img src="https://deepscan.io/api/teams/4302/projects/6070/branches/48585/badge/grade.svg" alt="DeepScan grade"></a>
 </p>
 
 <p align="center"><code>git clone git@github.com:dan-divy/git-chat.git</code></p>
