@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const sio = require('../../bin/www').sio;
 
 router.get('/:username', (req, res, next) => {
     if(!req.params.username) {
