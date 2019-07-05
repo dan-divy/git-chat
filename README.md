@@ -1,4 +1,4 @@
-<p align="center"><img src="./src/public/assets/images/logo.png" style="height:200px;" /></p>
+<p align="center"><img src="./src/public/img/logo-black.png" style="height:200px;" /></p>
 
 <p align="center">
   <a href="https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MayorChano/NodeJS&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/15025ce27628484fbe0ced9c837811ca" alt="Build Status"></a>
