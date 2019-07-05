@@ -1,7 +1,7 @@
 const fetch = require('axios');
 const db = require('../utils/handlers/database');
 module.exports = function (data, socket) {
-    db.get({_id: socket.session.user._id.toString()}, function(err, user) {
+    db.get({key: socket.session.user.id.toString()}, function(err, user) {
         if(!user) return;
         user.value.repos = [];
         fetch({
@@ -14,19 +14,24 @@ module.exports = function (data, socket) {
                     await callback(array[index], index, array);
                 }
             };
-            await asyncForEach(repos, async r => {
-                const res = await fetch({
-                    method: 'GET',
-                    headers: {'Authorization': 'token ' + socket.session.user.accessToken},
-                    url: r.contributors_url
-                });
-                if((res.data.find(u => u.id == socket.session.user.id) && parseInt(res.data.find(u => u.id == socket.session.user.id).contributions) >= 1) ) {
-                    await user.value.repos.push(r);
-                    console.log(user.value.repos.length)
+            asyncForEach(repos, async r => {
+                if(r.owner.id == socket.session.user.id) {
+                    user.value.repos.push(r);
+                } else {
+                    const res = await fetch({
+                        method: 'GET',
+                        headers: {'Authorization': 'token ' + socket.session.user.accessToken},
+                        url: r.contributors_url
+                    });
+                    if((res.data.find(u => u.id == socket.session.user.id) && parseInt(res.data.find(u => u.id == socket.session.user.id).contributions) >= 1) ) {
+                        await user.value.repos.push(r);
+                    }
                 }
-            })
-            db.save({_id: socket.session.user._id.toString()}, user, function(err, u) {
-                socket.emit('finished', true);
+            }).then(() => {
+                user.save(function(err, u) {
+                    if(err) console.error(err);
+                    if(u.value.repos == user.value.repos) socket.emit('finished', true);
+                });
             })
         });
     })

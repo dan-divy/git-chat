@@ -7,12 +7,12 @@ router.get("/", (req, res) => {
 });
 
 router.get("/cache", (req,res) => {
-  if(req.session.user && req.session.user.id) {
-    db.get({_id: req.session.user._id.toString()}, function(err, user) {
-        req.session.user = user.value
+  if(req.session && req.session.user && req.session.user.id) {
+    db.get({key: req.session.user.id.toString()}, function(err, user) {
+        req.session.user.repos = user.value.repos;
+        res.redirect('/');
     })
   }
-  res.redirect('/');
 })
 
 module.exports = router;

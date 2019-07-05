@@ -42,6 +42,7 @@ const functions = {
     },
 
     set(key, value, cb) {
+        console.log(key)
         if(!key || !value) {
             return false;
         }
@@ -53,6 +54,7 @@ const functions = {
 
 
     get(key, cb) {
+        console.log(key)
         Db.findOne(key, function(err, res)  {
             if(res) {
                 return cb(null, res);
@@ -69,15 +71,16 @@ const functions = {
         if(!profile.id) {
             return cb('Login not authenticated', null)
         }
-        this.get({key: profile.id.toString()}, function(err, user) {
-            if(!user || !user.repos) {
+        this.get({key: profile.id}, function(err, user) {
+            if(!user) {
                 let newUser = profile._json;
                 newUser.username = profile._json.login;
                 newUser.mentions = [];
                 newUser.notifications = [];
                 newUser.repos = [];
                 require('./database').set(profile.id, newUser, function(u) {
-                    cb(null, user);
+                    console.log('New user:' + u)
+                    cb(null, u);
                 })
             } else {
                 console.log('Found User: ' + user);
