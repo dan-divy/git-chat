@@ -39,7 +39,7 @@ module.exports = function(data, socket) {
         user = User(user);
         user.save(function(err, u) {
           if (err) console.error(err);
-          if (u.value.repos == user.value.repos) socket.emit("finished", true);
+          socket.emit("finished", true);
         });
       });
     });
