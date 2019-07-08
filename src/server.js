@@ -7,10 +7,10 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const helmet = require("helmet");
 const passport = require("passport");
-const config = require('./config/config');
+const config = require("./config/config");
 
-if(config.dsn.length > 10) {
-  const Sentry = require('@sentry/node');
+if (config.dsn.length > 10) {
+  const Sentry = require("@sentry/node");
   Sentry.init({ dsn: config.dsn });
 }
 
@@ -25,7 +25,7 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 const cooky = {
-	secret: "work hard",
+  secret: "work hard",
   resave: true,
   expires: new Date() * 60 * 60 * 24 * 7,
   saveUninitialized: true
@@ -41,7 +41,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use((req,res, next) => {if(!req.session.user) req.session.user = false;next()});
+app.use((req, res, next) => {
+  if (!req.session.user) req.session.user = false;
+  next();
+});
 
 app.use("/", userRouter);
 app.use("/", indexRouter);
@@ -63,6 +66,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
 
 module.exports = app;
