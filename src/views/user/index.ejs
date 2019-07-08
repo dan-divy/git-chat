@@ -28,6 +28,19 @@
                                 <% } %>
                             </div>
                         </div>
+                        <div class="card card-profile">
+                            <div class="card-body text-center">
+                                <h3 style="color: white" class="mb-3">Notifications</h3>
+                                <hr style="border-top:1px solid rgba(255,255,255,1); margin-left:25px; margin-right:20px; margin-top:0px">
+                                <p style="color: white" class="mb-4">
+                                <% if(user.notifications.length > 0) { %>
+                                    <%- user.notifications.map(n => n).join('') %>
+                                <% } else { %>
+                                    No new notifications!
+                                <% } %>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-8">
                         <div class="card">
@@ -38,10 +51,10 @@
                         <ul class="list-group card-list-group">
                             <% user.repos.sort((one,two) => {return two.stargazers_count - one.stargazers_count}) %>
                             <%- user.repos.map(r => `<li class="list-group-item py-5">
-                            <div class="media" style="color:white">
+                            <div class="media" style="color:rgb(255,255,255)">
                                 <div class="media-body">
                                 <div class="media-heading">
-                                    <h3 style="color:white">${r.name}</h3>
+                                    <h3 style="color:white"><a style="color: white; text-decoration:underline" href="/repo/${r.name}">${r.name}</a></h3>
                                 </div>
                                 <div>
                                     ${r.description || ''}
