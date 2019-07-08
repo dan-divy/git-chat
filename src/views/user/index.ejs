@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <% include ../main/head.ejs %>
+        <section style="background-color: #fff;padding-top:2rem">
+            <div style="background-color: #fff" class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card card-profile">
+                            <div class="card-body text-center">
+                                <img style="max-width:15rem; margin-top:0.5rem" class="card-profile-img" src="<%= user.avatar_url %>">
+                                <h3 style="color: white" class="mb-3"><%= user.username %></h3>
+                                <p style="color: white" class="mb-4">
+                                <%= user.bio %>
+                                </p>
+                                <a style="color:white; border-color: #fff" href="<%= user.html_url %>" class="btn btn-outline-primary btn-sm">
+                                    <span class="fab fa-github"></span>
+                                </a>
+                                <% if(user.email) { %>
+                                    <a style="color:white; border-color: #fff" href="mailto:<%= user.email %>" class="btn btn-outline-primary btn-sm">
+                                        <span class="fa fa-envelope"></span>
+                                    </a>
+                                <% } %>
+                                <% if(user.blog) { %>
+                                    <a style="color:white; border-color: #fff" href="<%= user.blog %>" class="btn btn-outline-primary btn-sm">
+                                        <span class="fa fa-hand-pointer"></span>
+                                    </a>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card">
+                        <div class="card-header">
+                            <h1 style="margin-top:4%;color:white">Repositories</h1>
+                        </div>
+                        <hr style="border-top:1px solid rgba(255,255,255,1); margin-left:25px; margin-right:20px; margin-top:0px">
+                        <ul class="list-group card-list-group">
+                            <% user.repos.sort((one,two) => {return two.stargazers_count - one.stargazers_count}) %>
+                            <%- user.repos.map(r => `<li class="list-group-item py-5">
+                            <div class="media" style="color:white">
+                                <div class="media-body">
+                                <div class="media-heading">
+                                    <h3 style="color:white">${r.name}</h3>
+                                </div>
+                                <div>
+                                    ${r.description || ''}
+                                </div>
+                                <ul class="media-list">
+                                     ${r.collaborators.map(c => `<li class="media mt-4">
+                                    <div class="media-object avatar mr-4" style="background-image: url(${c.avatar_url})"></div>
+                                    <div class="media-body">
+                                        <strong>${c.login}</strong> <i class="fa fa-crown" style="display:${r.owner.id == c.id || 'none'}; color: orange"></i>
+                                        <br>
+                                        ${c.contributions} contributions
+                                    </div>
+                                    </li>`).join('')}
+                                </ul>
+                                </div>
+                            </div>
+                            </li>`).join('') %>
+                        </ul>
+                        </div>
+                        <form class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Edit Profile</h3>
+                            <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                <label class="form-label">Company</label>
+                                <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="form-group">
+                                <label class="form-label">Username</label>
+                                <input type="text" class="form-control" placeholder="Username" value="michael23">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                <label class="form-label">Email address</label>
+                                <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" placeholder="Company" value="Chet">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Last Name" value="Faker">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                <label class="form-label">Address</label>
+                                <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="form-group">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" placeholder="City" value="Melbourne">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="form-group">
+                                <label class="form-label">Postal Code</label>
+                                <input type="number" class="form-control" placeholder="ZIP Code">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                <label class="form-label">Country</label>
+                                <select class="form-control custom-select">
+                                    <option value="">Germany</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group mb-0">
+                                <label class="form-label">About Me</label>
+                                <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Oh so, your weak rhyme</textarea>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button type="submit" class="btn btn-primary">Update Profile</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <% include ../main/footer.ejs %>
+    </body>
+</html>

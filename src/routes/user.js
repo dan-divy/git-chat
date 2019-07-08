@@ -14,9 +14,9 @@ router.get("/:username", (req, res, next) => {
 router.get("/:username/fetch", (req, res, next) => {
   if (req.params.username != req.session.user.username)
     return res.redirect("/");
-  if (req.session.user.repos.length > 0) {
-    res.redirect(`/${req.session.user.username}/`);
-  }
+  //if (req.session.user.repos.length > 0) {
+  //res.redirect(`/${req.session.user.username}/`);
+  //}
   res.render("user/load", { user: req.session.user });
 });
 

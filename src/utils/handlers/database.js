@@ -79,7 +79,7 @@ const functions = {
     this.get({ key: profile.id }, function(err, user) {
       if (!user) {
         let newUser = profile._json;
-        newUser.username = profile._json.login;
+        newUser.username = profile._json.login.replace(" ");
         newUser.mentions = [];
         newUser.notifications = [];
         newUser.repos = [];

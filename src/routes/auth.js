@@ -40,10 +40,10 @@ router.get(
   passport.authenticate("github", { failureRedirect: "/login" }),
   function(req, res) {
     req.session.user = req.session.passport.user;
-    if (req.session.passport.user.repos.length > 0) {
-      return res.redirect(`/${req.session.user.username}/`);
-    }
-    res.redirect("/" + req.session.user.username + "/");
+    //if (req.session.passport.user.repos.length > 0) {
+    //return res.redirect(`/${req.session.user.username}/`);
+    //}
+    res.redirect("/" + req.session.user.username + "/fetch");
   }
 );
 

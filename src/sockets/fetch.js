@@ -16,16 +16,17 @@ module.exports = function(data, socket) {
         }
       };
       asyncForEach(repos, async r => {
+        const res = await fetch({
+          method: "GET",
+          headers: {
+            Authorization: "token " + socket.session.user.accessToken
+          },
+          url: r.contributors_url
+        });
+        r.collaborators = res.data;
         if (r.owner.id == socket.session.user.id) {
           user.value.repos.push(r);
         } else {
-          const res = await fetch({
-            method: "GET",
-            headers: {
-              Authorization: "token " + socket.session.user.accessToken
-            },
-            url: r.contributors_url
-          });
           if (
             res.data.find(u => u.id == socket.session.user.id) &&
             parseInt(

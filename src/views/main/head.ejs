@@ -39,7 +39,7 @@
             </div>
           </div>
         </div>
-        <div class="header d-lg-flex p-0 collapse" id="headerMenuCollapse">
+        <div class="header d-lg-flex p-0 collapse" id="headerMenuCollapse" style="padding:15px!important; margin-top:-30px!important">
           <div class="container">
             <div class="row align-items-center">
                 <% if(user) { %><div class="dropdown d-none d-md-flex">
@@ -78,10 +78,10 @@
                     </span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                    <a class="dropdown-item" href="#">
-                      <i class="dropdown-icon fa fa-user"></i> Profile
+                    <a class="dropdown-item" href="/<%= user.username %>">
+                      <i class="dropdown-icon fa fa-home"></i> Home
                     </a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="/<%= user.username %>/settings">
                       <i class="dropdown-icon fa fa-cog"></i> Settings
                     </a>
                     <a class="dropdown-item" href="#">
@@ -95,14 +95,11 @@
                   </div>
                 </div>
                 <% } %>
-              <div class="col-lg order-lg-first">
+              <div class="col-lg order-lg-first mt-2">
                 <ul style="padding-left: 5%;" class="nav nav-tabs border-0 flex-column flex-lg-row">
                   <a class="header-brand" style="margin-top:1%" href="./index.html">
                       <img src="/img/logo-white.png" class="header-brand-img" alt="tabler logo">
                   </a>
-                  <li class="nav-item">
-                    <a href="/" class="nav-link"><i class="fa fa-home"></i>Home</a>
-                  </li>
                   <li class="nav-item">
                     <a href="/about-us" class="nav-link"><i class="fa fa-users"></i> About us</a>
                   </li>
