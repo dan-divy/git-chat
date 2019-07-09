@@ -5,9 +5,14 @@ module.exports = function(data, socket) {
   db.get({ key: socket.session.user.id.toString() }, function(err, user) {
     if (!user) return;
     user.value.repos = [];
+    let url = user.value.events_url;
     fetch({
       method: "GET",
-      url: socket.session.user.repos_url
+      headers: {
+        Authorization: "token " + socket.session.user.accessToken
+      },
+
+      url: `https://api.github.com/user/repos?type=all`
     }).then(async response => {
       const repos = response.data;
       const asyncForEach = async function(array, callback) {
@@ -24,18 +29,8 @@ module.exports = function(data, socket) {
           url: r.contributors_url
         });
         r.collaborators = res.data;
-        if (r.owner.id == socket.session.user.id) {
-          user.value.repos.push(r);
-        } else {
-          if (
-            res.data.find(u => u.id == socket.session.user.id) &&
-            parseInt(
-              res.data.find(u => u.id == socket.session.user.id).contributions
-            ) >= 1
-          ) {
-            await user.value.repos.push(r);
-          }
-        }
+        console.log(r.collaborators.length);
+        if (r.collaborators.length > 1) user.value.repos.push(r);
       }).then(() => {
         user = User(user);
         user.save(function(err, u) {

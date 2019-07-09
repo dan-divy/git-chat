@@ -60,7 +60,7 @@
                                     ${r.description || ''}
                                 </div>
                                 <ul class="media-list">
-                                     ${r.collaborators.map(c => `<li class="media mt-4">
+                                    ${r.collaborators.length < 1 || r.collaborators.map(c => `<li class="media mt-4">
                                     <div class="media-object avatar mr-4" style="background-image: url(${c.avatar_url})"></div>
                                     <div class="media-body">
                                         <strong>${c.login}</strong> <i class="fa fa-crown" style="display:${r.owner.id == c.id || 'none'}; color: orange"></i>
