@@ -88,7 +88,6 @@ $(document).ready(function() {
       value_area: 500
     };
   }
-
   if ($("#particles-js")[0])
     particlesJS("particles-js", {
       particles: {

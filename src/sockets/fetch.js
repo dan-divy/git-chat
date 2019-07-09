@@ -29,7 +29,6 @@ module.exports = function(data, socket) {
           url: r.contributors_url
         });
         r.collaborators = res.data;
-        console.log(r.collaborators.length);
         if (
           r.collaborators.length > 1 &&
           !user.value.repos.find(f => f.full_name == r.full_name)

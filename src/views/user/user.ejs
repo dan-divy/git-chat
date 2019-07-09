@@ -8,37 +8,24 @@
                     <div class="col-lg-4">
                         <div class="card card-profile">
                             <div class="card-body text-center">
-                                <img style="max-width:15rem; margin-top:0.5rem" class="card-profile-img" src="<%= user.avatar_url %>">
-                                <h3 style="color: white" class="mb-3"><%= user.username %></h3>
+                                <img style="max-width:15rem; margin-top:0.5rem" class="card-profile-img" src="<%= u.avatar_url %>">
+                                <h3 style="color: white" class="mb-3"><%= u.login %></h3>
                                 <p style="color: white" class="mb-4">
-                                <%= user.bio %>
+                                <%= u.bio %>
                                 </p>
-                                <a style="color:white; border-color: #fff" href="<%= user.html_url %>" class="btn btn-outline-primary btn-sm">
+                                <a style="color:white; border-color: #fff" href="<%= u.html_url %>" class="btn btn-outline-primary btn-sm">
                                     <span class="fab fa-github"></span>
                                 </a>
-                                <% if(user.email) { %>
-                                    <a style="color:white; border-color: #fff" href="mailto:<%= user.email %>" class="btn btn-outline-primary btn-sm">
+                                <% if(u.email) { %>
+                                    <a style="color:white; border-color: #fff" href="mailto:<%= u.email %>" class="btn btn-outline-primary btn-sm">
                                         <span class="fa fa-envelope"></span>
                                     </a>
                                 <% } %>
-                                <% if(user.blog) { %>
-                                    <a style="color:white; border-color: #fff" href="<%= user.blog %>" class="btn btn-outline-primary btn-sm">
+                                <% if(u.blog) { %>
+                                    <a style="color:white; border-color: #fff" href="https://<%= u.blog %>" class="btn btn-outline-primary btn-sm">
                                         <span class="fa fa-hand-pointer"></span>
                                     </a>
                                 <% } %>
-                            </div>
-                        </div>
-                        <div class="card card-profile">
-                            <div class="card-body text-center">
-                                <h3 style="color: white" class="mb-3">Notifications</h3>
-                                <hr style="border-top:1px solid rgba(255,255,255,1); margin-left:25px; margin-right:20px; margin-top:0px">
-                                <p style="color: white" class="mb-4">
-                                <% if(user.notifications.length > 0) { %>
-                                    <%- user.notifications.map(n => n).join('') %>
-                                <% } else { %>
-                                    No new notifications!
-                                <% } %>
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -48,9 +35,9 @@
                             <h1 style="margin-top:4%;color:white">Repositories</h1>
                         </div>
                         <hr style="border-top:1px solid rgba(255,255,255,1); margin-left:25px; margin-right:20px; margin-top:0px">
-                        <ul class="list-group card-list-group">
-                            <% user.repos.sort((one,two) => {return two.stargazers_count - one.stargazers_count}) %>
-                            <%- user.repos.map(r => `<li class="list-group-item py-5">
+                                                <ul class="list-group card-list-group">
+                            <% u.repos.sort((one,two) => {return two.stargazers_count - one.stargazers_count}) %>
+                            <%- u.repos.map(r => `<li class="list-group-item py-5">
                             <div class="media" style="color:rgb(255,255,255)">
                                 <div class="media-body">
                                 <div class="media-heading">
@@ -59,16 +46,6 @@
                                 <div>
                                     ${r.description || ''}
                                 </div>
-                                <ul class="media-list">
-                                    ${r.collaborators.length < 1 || r.collaborators.map(c =>  `<li class="media mt-4">
-                                    <div class="media-object avatar mr-4" style="background-image: url(${c.avatar_url})"></div>
-                                    <div class="media-body">
-                                        <a href="/${c.login}"><strong>${c.login}</strong></a> <i class="fa fa-crown" style="display:${r.owner.id == c.id || 'none'}; color: orange"></i>
-                                        <div style="display:none" id="popover-${c.id}"></div><br>
-                                        ${c.contributions} contributions
-                                    </div>
-                                    </li>`).join('')}
-                                </ul>
                                 </div>
                             </div>
                             </li>`).join('') %>
