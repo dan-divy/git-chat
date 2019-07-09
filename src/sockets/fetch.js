@@ -30,7 +30,11 @@ module.exports = function(data, socket) {
         });
         r.collaborators = res.data;
         console.log(r.collaborators.length);
-        if (r.collaborators.length > 1) user.value.repos.push(r);
+        if (
+          r.collaborators.length > 1 &&
+          !user.value.repos.find(f => f.full_name == r.full_name)
+        )
+          user.value.repos.push(r);
       }).then(() => {
         user = User(user);
         user.save(function(err, u) {
