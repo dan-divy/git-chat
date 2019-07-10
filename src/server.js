@@ -21,6 +21,8 @@ const restApi = require("./routes/api/v1/index");
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
 const repoRouter = require("./routes/repo");
+const infoRouter = require("./routes/info");
+
 const app = express();
 const queue = require("queue");
 app.q = queue();
@@ -51,11 +53,11 @@ app.use((req, res, next) => {
 });
 
 app.use("/", indexRouter);
+app.use("/info", infoRouter);
 app.use("/", userRouter);
 app.use("/repo", repoRouter);
 app.use("/api", restApi);
 app.use("/auth", authRouter);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
