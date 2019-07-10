@@ -10,7 +10,7 @@ const asyncForEach = async function(array, callback) {
 
 module.exports = function(data, socket) {
   db.get({ key: socket.session.user.id.toString() }, function(err, user) {
-    let j = q.push(function(cb) {
+    q.push(function(cb) {
       if (!user) return;
       user.value.repos = [];
       fetch({
