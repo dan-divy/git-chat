@@ -20,6 +20,7 @@ const indexRouter = require("./routes/index");
 const restApi = require("./routes/api/v1/index");
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
+const repoRouter = require("./routes/repo");
 const app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -48,6 +49,7 @@ app.use((req, res, next) => {
 
 app.use("/", indexRouter);
 app.use("/", userRouter);
+app.use("/repo", repoRouter);
 app.use("/api", restApi);
 app.use("/auth", authRouter);
 
