@@ -7,7 +7,7 @@
         <header id="header" style="height:534px"><br><br>
             <div class="container">
                 <div class="intro-text">
-                    <h1 id="demo" class="intro-lead-in">Hold on while we fetch your repositories</span></h1>
+                    <h1 id="large" class="intro-lead-in">Hold on while we fetch your repos</span></h1>
                     <span id="welcome">Give us a minute to search...</span><span id="time"></span>
                     <div class="header-dashboard"> 
                         <span class="spinner"></span>
@@ -24,8 +24,12 @@ var socket = io();
 setTimeout(() => {
     socket.emit('fetch');
 }, 1000)
+socket.on('repo_count', function(repos) {
+    $('#welcome').html(`${repos.done}/${repos.total} repos finished...`)
+})
 socket.on('finished', function() {
-    $('#welcome').html('Finished! To continue, click <a href="/info/cache">here</a> or wait ')
+    $('#welcome').html('To continue, click <a href="/info/cache">here</a> or wait ')
+    $('#large').html("Finished!")
     var sec = 10;
     setInterval(() => {
         if(sec == 0) {

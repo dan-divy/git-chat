@@ -21,6 +21,8 @@ module.exports = function(data, socket) {
         url: `https://api.github.com/user/repos?type=all`
       }).then(async response => {
         const repos = response.data;
+        const progress = { done: 0, total: repos.length };
+        socket.emit("repo_count", progress);
         asyncForEach(repos, async r => {
           const res = await fetch({
             method: "GET",
@@ -31,11 +33,12 @@ module.exports = function(data, socket) {
           });
           r.collaborators = res.data;
           if (
-            r.collaborators.length < 2 ||
-            user.value.repos.find(f => f.full_name == r.full_name)
+            r.collaborators.length > 1 &&
+            !user.value.repos.find(f => f.full_name == r.full_name)
           )
-            return;
-          await user.value.repos.push(r);
+            await user.value.repos.push(r);
+          progress.done++;
+          socket.emit("repo_count", progress);
         }).then(() => {
           user = User(user);
           user.save(function(err, u) {
