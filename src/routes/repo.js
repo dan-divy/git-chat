@@ -11,7 +11,9 @@ router.get("/:user/:repo", (req, res) => {
     { "value.full_name": `/${req.params.user}/${req.params.repo}` },
     (err, repo) => {
       if (repo) return res.render("repo/repo");
-      res.render("repo/load");
+      res.render("repo/load", {
+        repo: `/${req.params.user}/${req.params.repo}`
+      });
     }
   );
 });

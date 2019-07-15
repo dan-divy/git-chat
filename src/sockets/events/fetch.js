@@ -1,7 +1,7 @@
 const fetch = require("axios");
-const User = require("../utils/handlers/database").user;
-const db = require("../utils/handlers/database");
-const { q } = require("../server");
+const User = require("../../utils/handlers/database").user;
+const db = require("../../utils/handlers/database");
+const { q } = require("../../server");
 const usersRunning = [];
 
 const asyncForEach = async function(array, callback) {
@@ -10,7 +10,7 @@ const asyncForEach = async function(array, callback) {
   }
 };
 
-module.exports = function(data, socket) {
+module.exports = function(socket, data) {
   db.get({ key: socket.session.user.id.toString() }, function(err, user) {
     q.push(function(cb) {
       if (!user) return;

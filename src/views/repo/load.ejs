@@ -7,8 +7,8 @@
         <header id="header" style="height:534px"><br><br>
             <div class="container">
                 <div class="intro-text">
-                    <h1 id="large" class="intro-lead-in">Hold on while we fetch your repos</span></h1>
-                    <span id="welcome">Give us a minute to search...</span><span id="time"></span>
+                    <h1 id="large" class="intro-lead-in">This repo has yet to be initialized.</span></h1>
+                    <span id="welcome">Please give us a minute to create your repo...</span><span id="time"></span>
                     <div class="header-dashboard"> 
                         <span class="spinner"></span>
                     </div>
@@ -21,11 +21,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 <script>
 var socket = io();
-setTimeout(() => {
-    socket.emit('repo', "<%= repo %>");
-}, 1000)
+socket.emit('repo', "<%= repo %>");
 socket.on('finished', function() {
-
+    
 })
 </script>
     </body>
