@@ -34,7 +34,8 @@ module.exports = function(data, socket) {
           r.collaborators = res.data;
           if (
             r.collaborators.length > 1 &&
-            !user.value.repos.find(f => f.full_name == r.full_name)
+            !user.value.repos.find(f => f.full_name == r.full_name) &&
+            r.collaborators.find(c => c.id == user.value.id)
           )
             await user.value.repos.push(r);
           progress.done++;
