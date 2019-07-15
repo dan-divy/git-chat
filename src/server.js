@@ -49,15 +49,28 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use((req, res, next) => {
   if (!req.session.user) req.session.user = false;
+  res.locals.user = req.session.user;
+  if (req.path == "/" || !req.path) res.locals.path = " Home";
+  else res.locals.path = req.path;
   next();
 });
 
 app.use("/", indexRouter);
 app.use("/info", infoRouter);
+app.use("/auth", authRouter);
+
+app.use((req, res, next) => {
+  if (!req.session.user) {
+    return res.redirect("/");
+  } else {
+    next();
+  }
+});
+
 app.use("/", userRouter);
 app.use("/repo", repoRouter);
 app.use("/api", restApi);
-app.use("/auth", authRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

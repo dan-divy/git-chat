@@ -5,7 +5,7 @@
         <section style="background-color: #fff;padding-top:2rem">
             <div style="background-color: #fff" class="container">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-6 mx-auto">
                         <div class="card card-profile">
                             <div class="card-body text-center">
                                 <img style="max-width:15rem; margin-top:0.5rem" class="card-profile-img" src="<%= u.avatar_url %>">
@@ -27,29 +27,6 @@
                                     </a>
                                 <% } %>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="card">
-                        <div class="card-header">
-                            <h1 style="margin-top:4%;color:white">Repositories</h1>
-                        </div>
-                        <hr style="border-top:1px solid rgba(255,255,255,1); margin-left:25px; margin-right:20px; margin-top:0px">
-                            <ul class="list-group card-list-group">
-                            <% u.repos.sort((one,two) => {return two.stargazers_count - one.stargazers_count}) %>
-                            <%- u.repos.map(r => `<li class="list-group-item py-5">
-                            <div class="media" style="color:rgb(255,255,255)">
-                                <div class="media-body">
-                                <div class="media-heading">
-                                    <h3 style="color:white"><a style="color: white; text-decoration:underline" href="/repo/${r.name}">${r.full_name}</a></h3>
-                                </div>
-                                <div>
-                                    ${r.description || ''}
-                                </div>
-                                </div>
-                            </div>
-                            </li>`).join('') %>
-                        </ul>
                         </div>
                     </div>
                 </div>

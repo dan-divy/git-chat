@@ -2,6 +2,8 @@ const fetch = require("axios");
 const User = require("../utils/handlers/database").user;
 const db = require("../utils/handlers/database");
 const { q } = require("../server");
+const usersRunning = [];
+
 const asyncForEach = async function(array, callback) {
   for (let index = 0; index < array.length; index++) {
     await callback(array[index], index, array);
@@ -49,9 +51,11 @@ module.exports = function(data, socket) {
         });
       });
     });
+    setInterval(() => {}, 1000);
     q.on("success", function(result, job) {
       if (result == user.value.id) {
         socket.emit("finished", true);
+        console.log("Finished job for " + user.value.username);
       }
     });
   });

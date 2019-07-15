@@ -5,9 +5,6 @@ router.get("/:username", (req, res, next) => {
   if (!req.params.username) {
     return next();
   }
-  if (!req.session.user) {
-    return res.redirect("/");
-  }
   if (req.params.username != req.session.user.username) {
     const fetch = require("axios");
     fetch({
@@ -16,15 +13,8 @@ router.get("/:username", (req, res, next) => {
     })
       .then(response => {
         const u = response.data;
-        fetch({
-          method: "GET",
-          url: u.repos_url
-        }).then(r => {
-          u.repos = r.data;
-          return res.render("user/user", {
-            u,
-            user: req.session.user
-          });
+        return res.render("user/user", {
+          u
         });
       })
       .catch(err => {
@@ -32,7 +22,7 @@ router.get("/:username", (req, res, next) => {
       });
     return;
   }
-  return res.render("user/index", { user: req.session.user });
+  return res.render("user/index");
 });
 
 router.get("/:username/fetch", (req, res, next) => {
@@ -41,7 +31,7 @@ router.get("/:username/fetch", (req, res, next) => {
   //if (req.session.user.repos.length > 0) {
   //res.redirect(`/${req.session.user.username}/`);
   //}
-  res.render("user/load", { user: req.session.user });
+  res.render("user/load");
 });
 
 module.exports = router;

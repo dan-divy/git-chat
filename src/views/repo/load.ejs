@@ -21,22 +21,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 <script>
 var socket = io();
-socket.emit('fetch');
-socket.on('repo_count', function(repos) {
-    $('#welcome').html(`${repos.done}/${repos.total} repos finished...`)
-})
+setTimeout(() => {
+    socket.emit('repo', "<%= repo %>");
+}, 1000)
 socket.on('finished', function() {
-    $('#welcome').html('To continue, click <a href="/info/cache">here</a> or wait ')
-    $('#large').html("Finished!")
-    var sec = 10;
-    setInterval(() => {
-        if(sec == 0) {
-            return window.location.href = '/info/cache';
-        } else {
-            sec--;
-        }
-        $('#time').text(sec + ' seconds');
-    }, 1000)
+
 })
 </script>
     </body>
