@@ -2,11 +2,12 @@
 <html lang="en">
     <body>
         <% include ../main/head.ejs %>
-        <section style="background-color: #fff;padding-top:2rem">
+        <section style="padding-top:2rem; background-color: #fff">
             <div style="background-color: #fff" class="container">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card card-profile">
+                        <div id="particles-js" amount="high"></div>
                             <div class="card-body text-center">
                                 <img style="max-width:15rem; margin-top:0.5rem" class="card-profile-img" src="<%= user.avatar_url %>">
                                 <h3 style="color: white" class="mb-3"><%= user.username %></h3>

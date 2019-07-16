@@ -22,6 +22,7 @@ const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
 const repoRouter = require("./routes/repo");
 const infoRouter = require("./routes/info");
+const webhookRouter = require("./routes/info");
 
 const app = express();
 const queue = require("queue");
@@ -58,6 +59,7 @@ app.use((req, res, next) => {
 app.use("/", indexRouter);
 app.use("/info", infoRouter);
 app.use("/auth", authRouter);
+app.use("/webhook/", webhookRouter);
 
 app.use((req, res, next) => {
   if (!req.session.user) {

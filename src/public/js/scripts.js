@@ -77,10 +77,13 @@ $(document).ready(function() {
 
   // HEADER PARTICLES EFFECT
 
-  if ($(window).width() > 960) {
+  if (
+    $(window).width() > 960 ||
+    ($("#particles-js") && $("#particles-js").attr("amount") == "high")
+  ) {
     var density = {
       enable: true,
-      value_area: 2000
+      value_area: 5000
     };
   } else {
     var density = {
