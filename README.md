@@ -16,7 +16,6 @@
 - View your pull requests, issues and get reminders.
 - Using the latest Tabler UI.
 - Chat while you code with collaborators.
-- Easiest shit in the world.
 
 ### Try it out
 
