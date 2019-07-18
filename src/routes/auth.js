@@ -1,6 +1,8 @@
 var passport = require("passport");
 var GitHubStrategy = require("passport-github").Strategy;
-var config = process.env.config || require("../config/config");
+var config =
+  (process.env.config && JSON.parse(process.env.config)) ||
+  require("../config/config");
 var express = require("express");
 var router = express.Router();
 var db = require("../utils/handlers/database");
