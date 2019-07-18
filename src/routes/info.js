@@ -13,8 +13,8 @@ router.get("/cache", (req, res) => {
   res.redirect("/");
 });
 
-router.get("/", (req, res) => {
-  res.render("index");
+router.get("/about-us", (req, res) => {
+  res.render("info/about");
 });
 
 module.exports = router;

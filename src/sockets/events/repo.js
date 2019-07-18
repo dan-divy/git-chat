@@ -18,7 +18,7 @@ module.exports = function(socket, data) {
         if (found) {
           return socket.emit("found", found.value.full_name);
         }
-        if (!repo.push) {
+        if (!repo.permissions.push) {
           return socket.emit("err", {
             title: "You do not have permission",
             sub:
