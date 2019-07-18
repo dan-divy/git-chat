@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const helmet = require("helmet");
 const passport = require("passport");
-const config = require("./config/config");
+const config = require("./config/config") || process.env.config;
 
 if (config.dsn.length > 10) {
   const Sentry = require("@sentry/node");
