@@ -1,26 +1,26 @@
 #!/usr/bin/env node
-console.clear()
+console.clear();
 // Modules
-const app = require('../src/server');
-const io = require('socket.io');
-const http = require('http');
-const config = require('../package.json');
-if(process.argv.find((x) => x == 'test')) {
+const app = require("../src/server");
+const io = require("socket.io");
+const http = require("http");
+const config = require("../package.json");
+if (process.argv.find(x => x == "test")) {
   config.port = 1212;
 }
 // Msg
-process.stdout.write(config.name + '-v' + config.version + ': Starting...');
+process.stdout.write(config.name + "-v" + config.version + ": Starting...");
 // Port init
 const port = normalizePort(process.env.PORT || config.port);
-app.set('port', port);
+app.set("port", port);
 //Start server
 const server = http.createServer(app);
-const sio = io(server); 
+const sio = io(server);
 
 //Listening
 server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+server.on("error", onError);
+server.on("listening", onListening);
 //Make port a number
 function normalizePort(val) {
   const port = parseInt(val, 10);
@@ -35,22 +35,20 @@ function normalizePort(val) {
 
 //Event listeners
 function onError(error) {
-  if (error.syscall !== 'listen') {
+  if (error.syscall !== "listen") {
     throw error;
   }
 
-  const bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  const bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
+    case "EACCES":
+      console.error(bind + " requires elevated privileges");
+      return server.listen(8080);
       break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+    case "EADDRINUSE":
+      console.error(bind + " is already in use");
       process.exit(1);
       break;
     default:
@@ -59,22 +57,27 @@ function onError(error) {
 }
 function onListening() {
   const addr = server.address();
-  const bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  if(process.stdout.clearLine) process.stdout.clearLine(); 
-  if(process.stdout.cursorTo) process.stdout.cursorTo(0); 
-  process.stdout.write(config.name + '-v' + config.version + ': Listening on port ' + addr.port + '\n');
-  if(process.argv.find(x => x == 'test')) process.exit(0);
-  require('../src/sockets/index');
+  const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+  if (process.stdout.clearLine) process.stdout.clearLine();
+  if (process.stdout.cursorTo) process.stdout.cursorTo(0);
+  process.stdout.write(
+    config.name +
+      "-v" +
+      config.version +
+      ": Listening on port " +
+      addr.port +
+      "\n"
+  );
+  if (process.argv.find(x => x == "test")) process.exit(0);
+  require("../src/sockets/index");
 }
 
 //Error catching
-process.on('uncaughtException', (err) => {
+process.on("uncaughtException", err => {
   console.error(`${err.name} error: ${err.stack}`);
 });
 
-process.on('unhandledRejection', (err) => {
+process.on("unhandledRejection", err => {
   console.error(`${err.name} error: ${err.stack}`);
 });
 
