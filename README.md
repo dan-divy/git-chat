@@ -41,7 +41,7 @@ $ npm start
 
 ## Maintainers
 
-[Divy Srivastava](https://divy.work/) | [DanCodes](https://dancodes.online) | [Theaadithyan] (http://aadithyanrajesh.com)
+[Divy Srivastava](https://divy.work/) | [DanCodes](https://dancodes.online) | [Theaadithyan](https://aadithyanrajesh.com)
 
 ## License
 
